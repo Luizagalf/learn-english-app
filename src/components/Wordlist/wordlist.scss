@@ -1,0 +1,14 @@
+@import "./colors";
+
+.button {
+    width: 200px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    margin: 20px;
+    background: $black-color;
+}
+
+.button__success {
+    background: $black-color;
+    color: white;
+}
