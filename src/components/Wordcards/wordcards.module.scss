@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 25px;
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+}

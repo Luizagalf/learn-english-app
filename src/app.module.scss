@@ -1,0 +1,19 @@
+@import "./styles/colors.scss";
+@import "./styles/fonts.scss";
+
+.app {
+    background-color: $blue;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $blue;
+}
+
+.col {
+    padding: 25px;
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+}

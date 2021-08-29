@@ -1,0 +1,114 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.header {
+    background-color: $darkblue;
+    color: white;
+}
+
+.text {
+    color: white; 
+    margin: 0;
+    font-weight: bold;
+    font-family: $font;
+}
+
+// .button {
+//     font-family: $font;
+//     display: inline-block;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     color: #212529;
+//     text-align: center;
+//     text-decoration: none;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -webkit-user-select: none;
+//     user-select: none;
+//     background-color: transparent;
+//     border: 1px solid transparent;
+//     padding: .375rem .75rem;
+//     font-size: 1rem;
+//     border-radius: .25rem;
+//     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+// }
+
+
+.mainul {
+    list-style: none;
+    margin: 0;
+    background-color: $darkblue;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.smallul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-top:25px;
+    background-color: $darkblue;
+    height: 50px;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    padding:0px 15px;
+    font-family: $font;
+    font-size: $normalfont;
+    line-height:50px;
+    display: block; 
+    color: white;
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+a:hover {
+    background:$lightblue;
+    color: black;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    float:left;
+    position:relative;
+        background: $darkblue;   
+}
+     
+li > ul {
+    position: absolute;
+    top: 25px;
+    display: none;
+}
+     
+li:hover > ul {
+    display:block; 
+    width:250px;
+}
+li:hover > ul > li {
+    float:none;
+}
+
+// input {
+//     display: block;
+//     width: 100%;
+//     padding: .375rem .75rem;
+//     font-size: 1rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     background-clip: padding-box;
+//     border: 1px solid #ced4da;
+//     -webkit-appearance: none;
+//     appearance: none;
+//     border-radius: .25rem;
+//     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+// }

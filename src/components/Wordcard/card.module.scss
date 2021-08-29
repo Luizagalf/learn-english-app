@@ -1,0 +1,15 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.card {
+    text-align: center;
+    width: 200px;
+    background-color: $lightblue;
+    border-color: $darkblue;
+    font-size: $bigfont;
+    font-family: $font;
+}
+
+.maintext {
+    font-weight: bold;
+}

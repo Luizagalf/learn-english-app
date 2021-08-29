@@ -1,0 +1,19 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.table {
+    max-width: 600px;
+    background-color: $lightblue;
+    border-color: $blue;
+}
+
+.buttons {
+    width: 250px;
+    text-align: center;
+}
+
+thead {
+    text-align: center;
+    font-size: $bigfont;
+    font-family: $font;
+}

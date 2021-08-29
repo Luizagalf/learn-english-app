@@ -1,0 +1,41 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.table {
+    max-width: 600px;
+    background-color: $lightblue;
+    border-color: $blue;
+}
+
+.buttons {
+    max-width: 210px;
+    text-align: center;
+}
+
+thead {
+    text-align: center;
+    font-size: $bigfont;
+    font-family: $font;
+}
+
+.words {
+    font-size: $normalfont;
+    font-family: $font;
+}
+
+.button {
+    height: 30px;
+    font-size: $smallfont;
+    font-family: $font;
+    border: 0;
+}
+
+input {
+    background-color: $lightblue; 
+}
+
+.edit {
+    box-shadow: 0px 0px 10px 0px #000;
+    color: white;
+    background-color: $darkblue;
+}

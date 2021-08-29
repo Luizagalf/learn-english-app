@@ -1,39 +1,32 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import styles from "./header.module.scss";
+import {Button } from 'react-bootstrap';
+
+// const isValid from ('./validation.js');
 
 function Header() {
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
-                <Navbar.Brand href="#"> Let's learn English! </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="">Home</Nav.Link>
-                        <Nav.Link href="">Word list</Nav.Link>
-                        <NavDropdown title="Learn words" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#">Repeat words</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Learn new words</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Select a topic</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#">Random</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link href="">My progress</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        <Form className="d-flex">
-                            <FormControl
-                                type="search"
-                                placeholder="Search"
-                                className="mr-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+    <ul className={styles.mainul}>
+        <div>
+        <li><a href="">Let's learn English!</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Word list</a>
+            <ul className={styles.smallul}>
+                <li><a href="">Repeat words</a></li>
+                <li><a href="">Learn new words</a></li>
+                <li><a href="">Select a topic</a></li>
+                <li><a href="">Learn new words</a></li>
+            </ul>
+        </li>
+        <li><a href="">My progress</a></li>
+        </div>
+        <div>
+        <li className={styles.search}> 
+            <input type="search" name="q" placeholder="What to search?"/> 
+            <Button variant="primary" className={styles.button}>Search</Button>
+        </li>
+        </div>
+    </ul>
     );
 }
 

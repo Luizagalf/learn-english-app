@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./app.module.scss";
 
 import Header from './components/Header/Header';
 import Wordlist from './components/Wordlist/Wordlist';
@@ -7,12 +8,16 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <>
-    <Header></Header>
-    <Wordlist></Wordlist>
-    <Wordcards></Wordcards>
-    <Footer></Footer>
-    </>
+    <div>
+      <Header></Header>
+      <div className={styles.row}>
+        <div className={styles.col}>
+          <Wordlist></Wordlist>
+          <Wordcards></Wordcards>
+        </div>
+      </div>
+      <Footer></Footer>
+    </div>
   );
 }
 
