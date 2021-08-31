@@ -9,7 +9,7 @@ function Wordcards() {
             {
                 jsonWords.map((word) =>
                     <div className={styles.col}>
-                        <Wordcard id={word.id} english={word.english} url={word.url} transcription={word.transcription} russian={word.russian} tags={word.tags}></Wordcard>
+                        <Wordcard key={word.id} id={word.id} english={word.english} url={word.url} transcription={word.transcription} russian={word.russian} tags={word.tags}></Wordcard>
                     </div>
                 )
             }

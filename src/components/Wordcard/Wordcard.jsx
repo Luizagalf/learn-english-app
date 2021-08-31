@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./card.module.scss";
 import Card from 'react-bootstrap/Card';
 
-function Wordcard({ url, english, tags, transcription, russian }) {
+function Wordcard({ url, english, tags, transcription, russian, ...props }) {
     return (
         <Card className={styles.card}>
             <Card.Img variant="top" src={url} alt={english} />
