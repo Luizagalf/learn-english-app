@@ -1,8 +1,11 @@
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./card.module.scss";
-import Card from 'react-bootstrap/Card';
+import { Card, Button } from 'react-bootstrap';
 
-function Wordcard({ url, english, tags, transcription, russian, ...props }) {
+const Wordcard = ({ url, english, tags, transcription, russian }) => {
+    const [isPressed, togglePressed] = useState(false)
+
     return (
         <Card className={styles.card}>
             <Card.Img variant="top" src={url} alt={english} />
@@ -10,7 +13,11 @@ function Wordcard({ url, english, tags, transcription, russian, ...props }) {
                 <Card.Title className={styles.maintext}>{english}</Card.Title>
                 <Card.Subtitle>{tags}</Card.Subtitle>
                 <Card.Text>{transcription}</Card.Text>
-                <Card.Text className={styles.maintext}>{russian}</Card.Text>
+                {
+                    isPressed
+                        ? (<Card.Text className={styles.maintext} onClick={() => { togglePressed(false) }}>{russian}</Card.Text>)
+                        : (<Button size="sm" onClick={() => { togglePressed(true) }}>Check!</Button>)
+                }
             </Card.Body>
         </Card>
     );

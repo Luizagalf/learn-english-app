@@ -3,7 +3,7 @@ import jsonWords from '../../jsonWords';
 import Wordcard from '../Wordcard/Wordcard';
 import styles from "./wordcards.module.scss";
 
-function Wordcards() {
+const Wordcards = () => {
     return (
         <div className={styles.row}>
             {

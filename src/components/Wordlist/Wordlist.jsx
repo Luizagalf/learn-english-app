@@ -5,7 +5,7 @@ import { Table } from 'react-bootstrap';
 import jsonWords from '../../jsonWords';
 import Wordlistitem from '../Wordlistitem/Wordlistitem';
 
-function Wordlist() {
+const Wordlist = () => {
     return (
         <Table bordered size="sm" className={styles.table}>
             <thead>
