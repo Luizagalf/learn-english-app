@@ -1,6 +1,5 @@
 const jsonWords = [{
     "id": "57",
-    "edit": true,
     "english": "bus",
     "transcription": "[bʌs]",
     "russian": "автобус",

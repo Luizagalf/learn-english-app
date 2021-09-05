@@ -23,7 +23,7 @@ const Wordlist = () => {
             <tbody>
                 {
                     jsonWords.map((word) =>
-                        <Wordlistitem key={word.id} id={word.id} english={word.english} russian={word.russian} edit={word.edit}></Wordlistitem>
+                        <Wordlistitem key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
                     )
                 }
             </tbody>
