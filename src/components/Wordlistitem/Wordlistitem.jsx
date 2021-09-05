@@ -29,7 +29,7 @@ const Wordlistitem = ({ id, english, russian }) => {
                 </td>
                 <td className={styles.buttons}>
                     <Button variant="success" size="sm" className={styles.button} onClick={() => { toggleSelected(false) }}>Save</Button>{' '}
-                    <Button variant="warning" size="sm" className={styles.button} id={`edit.${id}`} onClick={handleChange}>
+                    <Button variant="warning" size="sm" className={styles.button} id={`edit.${id}`} onClick={handleChange} onClick={() => { toggleSelected(false) }}>
                         {
                             isReturn ? item = <tr>
                                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{english}</div></td>
