@@ -5,41 +5,45 @@ import { Button } from 'react-bootstrap';
 
 const Wordlistitem = ({ id, english, russian }) => {
     const [isSelected, toggleSelected] = useState(false)
+
     const [valueWord, setValueWord] = useState(english)
     const [valueTranslation, setValueTranslation] = useState(russian)
 
-    const [isReturn, toggleReturn] = useState(false)
-    const handleChange = () => {
-        toggleReturn(!isReturn);
+    const [prevValueWord, setPrevWord] = useState(valueWord)
+    const [prevValueTranslation, setPrevValueTranslation] = useState(valueTranslation)
+
+    const cancelChange = () => {
+        toggleSelected(false);
+        setValueWord(prevValueWord);
+        setValueTranslation(prevValueTranslation);
     };
+
+    const acceptChange = () => {
+        console.log("start");
+        setValueWord(valueWord);
+        setValueTranslation(valueTranslation);
+
+        setPrevWord(valueWord);
+        setPrevValueTranslation(valueTranslation);
+        toggleSelected(false);
+        console.log("finish");
+    }
 
     let item;
     {
         isSelected
             ? (item = <tr className={styles.edit}>
                 <td className={styles.words}><input
-                    onBlur={() => { toggleSelected(false) }}
                     onChange={(val) => setValueWord(val.target.value)}
                     value={valueWord} />
                 </td>
                 <td className={styles.words}><input
-                    onBlur={() => { toggleSelected(false) }}
                     onChange={(val) => setValueTranslation(val.target.value)}
                     value={valueTranslation} />
                 </td>
                 <td className={styles.buttons}>
-                    <Button variant="success" size="sm" className={styles.button} onClick={() => { toggleSelected(false) }}>Save</Button>{' '}
-                    <Button variant="warning" size="sm" className={styles.button} id={`edit.${id}`} onClick={handleChange} onClick={() => { toggleSelected(false) }}>
-                        {
-                            isReturn ? item = <tr>
-                                <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{english}</div></td>
-                                <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{russian}</div></td>
-                                <td className={styles.buttons}>
-                                    <Button variant="primary" size="sm" className={styles.button} id={`edit.${id}`} onClick={() => { toggleSelected(true) }}>Edit</Button>{' '}
-                                    <Button variant="danger" size="sm" className={styles.button}>Delete</Button>{' '}
-                                </td>
-                            </tr> : "Cancel"
-                        } </Button>{' '}
+                    <Button variant="success" size="sm" className={styles.button} onClick={() => acceptChange()}>Save</Button>{' '}
+                    <Button variant="warning" size="sm" className={styles.button} id={`edit.${id}`} onClick={() => cancelChange()}>Cancel</Button>{' '}
                     <Button variant="danger" size="sm" className={styles.button}>Delete</Button>{' '}
                 </td>
             </tr>)
