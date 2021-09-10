@@ -3,6 +3,7 @@ import styles from "./styles/app.module.scss";
 
 import Header from './components/Header/Header';
 import Wordlist from './components/Wordlist/Wordlist';
+import Slider from './components/Slider/Slider';
 import Wordcards from './components/Wordcards/Wordcards';
 import Footer from './components/Footer/Footer';
 
@@ -13,7 +14,7 @@ function App() {
       <div className={styles.row}>
         <div className={styles.col}>
           <Wordlist></Wordlist>
-          <Wordcards></Wordcards>
+          <Slider></Slider>
         </div>
       </div>
       <Footer></Footer>

@@ -1,0 +1,99 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 25px;
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+}
+
+.arrowleft, .arrowright {
+    cursor: pointer;
+    height: 120px;
+    width: 80px;
+    position: relative;
+    margin: 20px;
+}
+.arrowlefttop, 
+.arrowleftbottom,
+.arrowrighttop,
+.arrowrightbottom {
+    background: #337AB7;
+    height: 10px;
+    position: absolute;
+    top: 60px;
+    width: 100px;
+}
+.arrowlefttop, .arrowrighttop {
+    top: 64px;
+}
+
+.arrowlefttop{
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+.arrowrighttop {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+}
+
+.arrowleftbottom {
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.arrowrightbottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.arrowlefttop::after, 
+.arrowleftbottom::after,
+.arrowrighttop::after,
+.arrowrightbottom::after {
+    background: #000;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s;
+}
+.arrowleftbottom::after, .arrowrighttop::after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+}
+.arrowlefttop::after, .arrowrightbottom::after{
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+}
+
+.arrowleft:hover .arrowlefttop::after {
+    right: 0;
+    transition-delay: 0.15s;
+}
+
+.arrowleft:hover .arrowleftbottom::after{
+    left: 0;
+    transition-delay: 0s;
+}
+
+.arrowright:hover .arrowrighttop::after {
+    left: 0;
+    transition-delay: 0.15s;
+}
+
+.arrowright:hover .arrowrightbottom::after{
+    right: 0;
+    transition-delay: 0s;
+}
+
+
