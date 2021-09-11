@@ -1,25 +1,25 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./card.module.scss";
-import { Card, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const Wordcard = ({ url, english, tags, transcription, russian }) => {
     const [isPressed, togglePressed] = useState(false)
 
     return (
-        <Card className={styles.card}>
-            <Card.Img variant="top" src={url} alt={english} />
-            <Card.Body>
-                <Card.Title className={styles.maintext}>{english}</Card.Title>
-                <Card.Subtitle>{tags}</Card.Subtitle>
-                <Card.Text>{transcription}</Card.Text>
+        <div className={styles.card}>
+            <img className={styles.img} src={url} alt={english} />
+            <div className={styles.cardbody}>
+                <h5 className={styles.maintext}>{english}</h5>
+                <h6>{tags}</h6>
+                <p>{transcription}</p>
                 {
                     isPressed
-                        ? (<Card.Text className={styles.maintext} onClick={() => { togglePressed(false) }}>{russian}</Card.Text>)
+                        ? (<p className={styles.maintext} onClick={() => { togglePressed(false) }}>{russian}</p>)
                         : (<Button size="sm" onClick={() => { togglePressed(true) }}>Check!</Button>)
                 }
-            </Card.Body>
-        </Card>
+            </div>
+        </div>
     );
 }
 

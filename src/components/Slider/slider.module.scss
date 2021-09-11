@@ -1,16 +1,23 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col {
+.slider {
     padding: 25px;
     display: flex;
     flex: 1 0;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+.card {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .arrowleft, .arrowright {
