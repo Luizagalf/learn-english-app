@@ -7,7 +7,7 @@ import styles from "./slider.module.scss";
 const Slider = () => {
     const [count, setCount] = useState(0)
 
-    const [state, setState] = useState([])
+    const [state, setState] = useState(false)
     useEffect(() => {
         fetch("http://sandbox.itgirlschool.ru/api/words/")
             .then(Response => Response.json())
