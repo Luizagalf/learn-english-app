@@ -30,6 +30,24 @@
     min-width: 100px;
 }
 
+@mixin smallorangebutton {
+    display: block;
+    @include input;
+    @include text-font;
+    font-size: 0.8em;
+    padding: .0em .75em;
+    background-color: $orange;
+    color: $white;
+    margin: 0 auto;
+}
+
+@mixin everyinput {
+    display: block;
+    @include input;
+    max-width: 200px;
+    height: 40px;
+}
+
 $bigfont: 1rem;
 $normalfont: 0.8rem;
 $smallfont: 0.7rem;
@@ -211,4 +229,5 @@ td {
     font-size: 100%;
     font-family: inherit;
     vertical-align: baseline;
+    list-style-type: none;
 }

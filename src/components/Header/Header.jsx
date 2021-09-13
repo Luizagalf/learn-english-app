@@ -1,28 +1,31 @@
 import styles from "./header.module.scss";
+import {
+    Link
+} from "react-router-dom";
 
 // const isValid from ('./validation.js');
 
 const Header = () => {
     return (
-        <ul className={styles.mainul}>
-            <div className={styles.menu}>
-                <li><a href="" className={styles.namesite}>Let's learn English!</a></li>
-                <li><a href="" className={styles.mainli}>Home</a></li>
-                <li><a href="" className={styles.mainli}>Word list</a>
+        <div className={styles.header}>
+            <ul className={styles.menu}>
+                <li><Link to="/home" className={styles.namesite}>Let's learn English!</Link></li>
+                <li><Link to="/home" className={styles.mainli}>Home</Link></li>
+                <li><Link to="/wordlist" className={styles.mainli}>Word list</Link>
                     <ul className={styles.smallul}>
-                        <li><a href="" className={styles.mainli}>Repeat words</a></li>
-                        <li><a href="" className={styles.mainli}>Learn new words</a></li>
-                        <li><a href="" className={styles.mainli}>Select a topic</a></li>
-                        <li><a href="" className={styles.mainli}>Learn new words</a></li>
+                        <li><Link to="/slider" className={styles.mainli}>Repeat words</Link></li>
+                        <li><Link to="" className={styles.mainli}>Learn new words</Link></li>
+                        <li><Link to="" className={styles.mainli}>Select a topic</Link></li>
+                        <li><Link to="" className={styles.mainli}>Learn new words</Link></li>
                     </ul>
                 </li>
                 <li><a href="" className={styles.mainli}>My progress</a></li>
-            </div>
+            </ul>
             <div className={styles.form}>
                 <input type="search" name="q" placeholder="What to search?" className={styles.search} />
                 <button className={styles.searchbutton}>Search</button>
             </div>
-        </ul>
+        </div>
     );
 }
 

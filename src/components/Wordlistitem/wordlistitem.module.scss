@@ -30,8 +30,18 @@ thead {
     border: 0;
 }
 
-input {
-    background-color: $lightblue; 
+.iteminput {
+    @include everyinput;
+    height: 30px;
+    width: 190px;
+}
+
+.smallorangebutton {
+    @include smallorangebutton;
+}
+.smallgreenbutton {
+    @include smallorangebutton;
+    background-color: green;
 }
 
 .edit {

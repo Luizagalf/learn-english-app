@@ -2,23 +2,26 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/screen.scss";
 
+.header {
+    background-color: $darkblue;
+    color: $white;
+    list-style: none;
+    @include zero;
+    // height: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+}
+
 .menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 30px;
-}
-
-.mainul {
-    background-color: $darkblue;
-    color: $white;
-    list-style: none;
-    @include zero;
-    height: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .smallul {
@@ -99,10 +102,7 @@ li:hover > ul > li {
 }
 
 .search {
-    display: block;
-    @include input;
-    max-width: 200px;
-    height: 40px;
+    @include everyinput;
 }
 
 .searchbutton {
