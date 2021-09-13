@@ -16,9 +16,8 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-content: space-around;
-    justify-content: center;
     align-items: center;
+    row-gap: 30px;
 }
 
 .arrowleft, .arrowright {

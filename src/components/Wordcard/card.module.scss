@@ -4,16 +4,18 @@
 
 .card {
     text-align: center;
-    max-width:400px;
+    width:300px;
     background-color: $lightblue;
     border-color: $darkblue;
     @include subtitle-font;
 
     display: flex;
     flex-direction: column;
+    row-gap: 30px;
+    max-height: 650px;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
-    max-height: 650px;
+    height: 485px;
 }
 
 .img {
@@ -24,9 +26,10 @@
 }
 
 .cardbody {
-    flex: 1 1 auto;
-    padding: 1rem 1rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 30px;
 }
 
 h5 {
@@ -41,4 +44,24 @@ h6 {
 
 .checkbutton {
     @include orangebutton;
+    box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
+    transform: scale(1);
+    animation: radial-pulse 3s infinite;
+}
+
+@keyframes radial-pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(255, 121, 63, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
 }

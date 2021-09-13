@@ -44,7 +44,7 @@ const Wordlistitem = ({ id, english, russian }) => {
                 <td className={styles.buttons}>
                     <Button variant="success" size="sm" className={styles.button} onClick={() => acceptChange()}>Save</Button>{' '}
                     <Button variant="warning" size="sm" className={styles.button} id={`edit.${id}`} onClick={() => cancelChange()}>Cancel</Button>{' '}
-                    <Button variant="danger" size="sm" className={styles.button}>Delete</Button>{' '}
+                    <Button variant="danger" size="sm" className={styles.button}>x</Button>{' '}
                 </td>
             </tr>)
             : (item = <tr>
@@ -52,7 +52,7 @@ const Wordlistitem = ({ id, english, russian }) => {
                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{valueTranslation}</div></td>
                 <td className={styles.buttons}>
                     <Button variant="primary" size="sm" className={styles.button} id={`edit.${id}`} onClick={() => { toggleSelected(true) }}>Edit</Button>{' '}
-                    <Button variant="danger" size="sm" className={styles.button}>Delete</Button>{' '}
+                    <Button variant="danger" size="sm" className={styles.button}>x</Button>{' '}
                 </td>
             </tr>)
     }

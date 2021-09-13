@@ -108,3 +108,12 @@ li:hover > ul > li {
 .searchbutton {
     @include orangebutton;
 }
+
+.searchbutton:hover {
+    background: #bf5d1c;
+}
+
+.searchbutton:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px $orange;
+}
