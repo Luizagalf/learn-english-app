@@ -1,13 +1,13 @@
 @import "../../styles/colors.scss";
-@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
 
 .card {
     text-align: center;
     max-width:400px;
     background-color: $lightblue;
     border-color: $darkblue;
-    font-size: $bigfont;
-    font-family: $font;
+    @include subtitle-font;
 
     display: flex;
     flex-direction: column;
@@ -37,4 +37,8 @@ h5 {
 h6 {
     margin-top: -.25rem;
     margin-bottom: 0;
+}
+
+.checkbutton {
+    @include orangebutton;
 }

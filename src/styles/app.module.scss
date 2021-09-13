@@ -1,5 +1,6 @@
 @import "./colors.scss";
-@import "./fonts.scss";
+@import "./mixins.scss";
+@import "./screen.scss";
 
 .app {
     background-color: $blue;

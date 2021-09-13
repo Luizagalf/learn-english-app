@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
-@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
 
 .table {
     max-width: 600px;
@@ -14,8 +15,7 @@
 
 thead {
     text-align: center;
-    font-size: $bigfont;
-    font-family: $font;
+    @include subtitle-font;
 }
 
 .words {

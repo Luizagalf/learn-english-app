@@ -1,15 +1,15 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./footer.module.scss";
-import { Button } from 'react-bootstrap';
 
 const Footer = () => {
     return (
         <ul className={styles.mainul}>
-            <li><a href="">Let's learn English!</a></li>
-            <li className={styles.search}>
-                <input type="search" name="q" placeholder="What to search?" />
-                <Button variant="primary" className={styles.button}>Search</Button>
-            </li>
+            <div className={styles.menu}>
+                <li><a href="" className={styles.namesite}>Let's learn English!</a></li>
+            </div>
+            <div className={styles.form}>
+                <input type="search" name="q" placeholder="What to search?" className={styles.search} />
+                <button className={styles.searchbutton}>Search</button>
+            </div>
         </ul>
     );
 }

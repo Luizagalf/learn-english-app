@@ -1,7 +1,5 @@
 import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./card.module.scss";
-import { Button } from 'react-bootstrap';
 
 const Wordcard = ({ url, english, tags, transcription, russian }) => {
     const [isPressed, togglePressed] = useState(false)
@@ -16,7 +14,7 @@ const Wordcard = ({ url, english, tags, transcription, russian }) => {
                 {
                     isPressed
                         ? (<p className={styles.maintext} onClick={() => { togglePressed(false) }}>{russian}</p>)
-                        : (<Button size="sm" onClick={() => { togglePressed(true) }}>Check!</Button>)
+                        : (<button className={styles.checkbutton} onClick={() => { togglePressed(true) }}>Check!</button>)
                 }
             </div>
         </div>

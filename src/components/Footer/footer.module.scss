@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
-@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
 
 .button {
     font-family: $font;
@@ -16,11 +17,11 @@
     justify-content: space-around;
 }
 
-a {
+.namesite {
     text-decoration: none;
     padding:0px 15px;
     font-family: $font;
-    font-size: $bigfont;
+    @include title-font;
     line-height:50px;
     display: block; 
     color: white;
@@ -28,20 +29,26 @@ a {
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
-a:hover {
-    background:$lightblue;
-    color: black;
+
+.namesite:hover {
+    color: white;
 }
 
 .form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
 }
 
-li {
-    float:left;
-    position:relative;
-    background: $darkblue;   
+.search {
+    display: block;
+    @include input;
+    max-width: 200px;
+    height: 40px;
 }
- 
+
+.searchbutton {
+    @include orangebutton;
+}
+

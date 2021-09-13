@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
-@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
 
 .slider {
     padding: 25px;
@@ -9,8 +10,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-
 }
+
 .card {
     display: flex;
     flex-wrap: nowrap;
@@ -102,5 +103,6 @@
     right: 0;
     transition-delay: 0s;
 }
+
 
 

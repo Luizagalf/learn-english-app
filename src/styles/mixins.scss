@@ -1,0 +1,213 @@
+@mixin zero {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@mixin georgia {
+    @include zero;
+    font-family: Georgia, serif;
+    font-style: normal;
+    text-decoration: none;
+}
+
+@mixin table {
+    @include zero;
+    // border-radius: .25rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@mixin orangebutton {
+    display: block;
+    @include input;
+    @include text-font;
+    height: 40px;
+    padding: .0em .75em;
+    background-color: $orange;
+    color: $white;
+    margin: 0 auto;
+}
+
+$bigfont: 1rem;
+$normalfont: 0.8rem;
+$smallfont: 0.7rem;
+
+$font: Georgia, serif;
+
+@mixin input {
+    @include table;
+    padding: .375rem .75rem;
+}
+
+@mixin btn-input-size {
+    margin: 0;
+    height: 60px;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+// fonts
+@mixin title-font {
+    @include georgia;
+    @include zero;
+    font-size: 1.3em;
+    font-weight: 540;
+    line-height: 45px;
+}
+
+@mixin subtitle-font {
+    @include georgia;
+    @include zero;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+@mixin text-font {
+    @include georgia;
+    @include zero;
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+
+
+
+
+
+@mixin subtitle-font-min {
+    font-size: 1.15em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin text-font {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 35px;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin text-font-min {
+    font-size: 0.8em;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+
+
+@mixin title-font_mob {
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 45px;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin subtitle-font_mob {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 35px;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin subtitle-font-min_mob {
+    font-size: 1.15em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin text-font_mob {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 35px;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+@mixin text-font-min_mob {
+    font-size: 0.8em;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    @include zero;
+}
+
+
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+button,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
