@@ -10,21 +10,16 @@ const Slider = () => {
     const [state, setState] = useState(false)
     useEffect(() => {
         fetch("http://sandbox.itgirlschool.ru/api/words/")
-            .then(Response => Response.json())
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong...');
+                }
+            })
             .then(json => setState(json))
+            .catch(error => setState(jsonWords))
     })
-
-    const handelClickJson = (e) => {
-        if (e <= 0) {
-            setCount(jsonWords.length - 1)
-            return;
-        }
-        if (e >= jsonWords.length) {
-            setCount(0)
-            return;
-        }
-        setCount(e)
-    }
 
     const handelClickState = (e) => {
         if (e <= 0) {
@@ -41,7 +36,7 @@ const Slider = () => {
     return (
         <>
             {state
-                ?
+                &&
                 <div className={styles.slider} >
                     <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
                         <div className={styles.arrowlefttop}></div>
@@ -52,21 +47,6 @@ const Slider = () => {
                         <div>{count + 1}/{state.length}</div>
                     </div>
                     <div className={styles.arrowright} onClick={() => { handelClickState(count + 1) }}>
-                        <div className={styles.arrowrighttop}></div>
-                        <div className={styles.arrowrightbottom}></div>
-                    </div>
-                </div>
-                :
-                <div className={styles.slider}>
-                    <div className={styles.arrowleft} onClick={() => { handelClickJson(count - 1) }}>
-                        <div className={styles.arrowlefttop}></div>
-                        <div className={styles.arrowleftbottom}></div>
-                    </div>
-                    <div className={styles.card}>
-                        <Wordcard key={jsonWords[count].id} id={jsonWords[count].id} english={jsonWords[count].english} url={jsonWords[count].url} transcription={jsonWords[count].transcription} russian={jsonWords[count].russian} tags={jsonWords[count].tags}></Wordcard>
-                        <div>{count + 1}/{jsonWords.length}</div>
-                    </div>
-                    <div className={styles.arrowright} onClick={() => { handelClickJson(count + 1) }}>
                         <div className={styles.arrowrighttop}></div>
                         <div className={styles.arrowrightbottom}></div>
                     </div>
