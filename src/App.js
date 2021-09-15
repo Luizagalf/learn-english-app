@@ -19,18 +19,12 @@ function App() {
       <Header/>
       <div className={styles.main}>
                 <Switch>
+                    <Route exact path="/game" component={() => <Slider/>} />
                     <Route exact path="/wordlist" component={() => <Wordlist/>} />
-                    <Route exact path="/slider" component={() => <Slider/>} />
-                    <Route path="/home">
-                      <div className={styles.row}>
-                        <div className={styles.col}>
-                          <Wordlist/>
-                          <Slider/>
-                        </div>
-                      </div>
-                    </Route>
+                    <Route exact path="/allwords" component={() => <Wordcards/>} />
+                    <Route exact path="/home" component={() => <Wordcards/>} />
                     <Route>
-                        Ничего не найдено!
+                    Nothing found!
                     </Route>
                 </Switch>
       </div>
