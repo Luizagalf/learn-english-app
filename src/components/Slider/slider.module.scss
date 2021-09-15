@@ -20,6 +20,10 @@
     row-gap: 30px;
 }
 
+.title {
+    @include title-font;
+}
+
 .arrowleft, .arrowright {
     cursor: pointer;
     height: 120px;
