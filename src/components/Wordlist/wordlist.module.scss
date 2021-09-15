@@ -3,17 +3,19 @@
 @import "../../styles/screen.scss";
 
 .table {
-    max-width: 600px;
     background-color: $lightblue;
-    border-color: $blue;
-}
-
-.buttons {
-    width: 250px;
-    text-align: center;
+    flex: 1 0;
+    min-width: 600px;
+    margin: 75px auto 25px auto;
+    border: 1px solid $darkblue;
 }
 
 thead {
     text-align: center;
     @include subtitle-font;
+}
+
+.title {
+    text-align: center;
+    @include title-font;
 }

@@ -161,6 +161,12 @@ $font: Georgia, serif;
 
 
 
+
+td, tr {
+    @include subtitle-font;
+    border: 1px solid $blue;
+}
+
 html,
 body,
 div,
@@ -216,10 +222,7 @@ table,
 caption,
 tbody,
 tfoot,
-thead,
-tr,
-th,
-td {
+thead {
     margin: 0;
     padding: 0;
     border: 0;

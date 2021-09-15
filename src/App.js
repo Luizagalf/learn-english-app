@@ -16,19 +16,21 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <BrowserRouter>
+    <div className={styles.app}>
       <Header/>
       <div className={styles.main}>
                 <Switch>
                     <Route exact path="/game" component={() => <Slider/>} />
                     <Route exact path="/wordlist" component={() => <Wordlist/>} />
                     <Route exact path="/allwords" component={() => <Wordcards/>} />
-                    <Route exact path="/home" component={() => <Wordcards/>} />
+                    <Route exact path="/home" component={() => <Wordlist/>} />
                     <Route>
                     Nothing found!
                     </Route>
                 </Switch>
       </div>
       <Footer/>
+      </div>
     </BrowserRouter>
   );
 }
