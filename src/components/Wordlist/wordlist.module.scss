@@ -2,11 +2,14 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/screen.scss";
 
+.list {
+    padding: 25px;
+}
+
 .table {
     background-color: $lightblue;
-    flex: 1 0;
     min-width: 600px;
-    margin: 75px auto 25px auto;
+    margin: 0 auto;
     border: 1px solid $darkblue;
 }
 
