@@ -12,6 +12,7 @@ import Wordlist from './components/Wordlist/Wordlist';
 import Slider from './components/Slider/Slider';
 import Wordcards from './components/Wordcards/Wordcards';
 import Footer from './components/Footer/Footer';
+import Error from './components/Error/Error';
 
 function App() {
   return (
@@ -23,10 +24,8 @@ function App() {
                     <Route exact path="/game" component={() => <Slider/>} />
                     <Route exact path="/wordlist" component={() => <Wordlist/>} />
                     <Route exact path="/allwords" component={() => <Wordcards/>} />
-                    <Route exact path="/home" component={() => <Wordlist/>} />
-                    <Route>
-                    Nothing found!
-                    </Route>
+                    <Route exact path="/" component={() => <Wordlist/>} />
+                    <Route component={() => <Error/>}/>
                 </Switch>
       </div>
       <Footer/>

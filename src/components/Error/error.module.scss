@@ -1,0 +1,60 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
+
+.main {
+    padding: 25px;
+    text-align: center;
+}
+
+// .items {
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     -webkit-transform: translate(-50%,-50%);
+//     -ms-transform: translate(-50%,-50%);
+//     transform: translate(-50%,-50%);
+//     text-align: center;
+// }
+
+.title {
+    @include title-font;
+    font-size: 2em;
+    color: $darkblue;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: -10%;
+    margin-bottom: 5%
+}
+
+.text {
+    @include title-font;
+    color: $darkblue;
+}
+
+.errortext {
+    position: relative;
+    z-index: 1;
+    font-family: maven pro,sans-serif;
+    color: #e0b598;
+    font-weight: 900;
+    font-size: 276px;
+}
+
+.errorbutton {
+    @include orangebutton;
+}
+
+.errorbutton:hover {
+    background: $deeporange;
+}
+
+

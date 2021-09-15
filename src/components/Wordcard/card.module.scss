@@ -49,6 +49,9 @@ h6 {
     animation: radial-pulse 3s infinite;
 }
 
+.checkbutton:hover {
+    background: $deeporange;
+}
 @keyframes radial-pulse {
     0% {
         transform: scale(0.95);

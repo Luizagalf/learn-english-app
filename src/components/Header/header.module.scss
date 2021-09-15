@@ -15,7 +15,7 @@
     justify-content: space-around;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 4;
 }
 
 .menu {
@@ -31,7 +31,7 @@
     padding-left: 0;
     margin-top:25px;
     height: 50px;
-    z-index: 2;
+    z-index: 5;
 }
 
 .namesite {
@@ -47,10 +47,8 @@
     -webkit-transition: all 0.3s 0.01s ease;
 }
 
-.mainli {
+.mainli, .smallli {
     text-decoration: none;
-    padding:0px 15px;
-    font-family: $font;
     @include text-font;
     line-height:50px;
     display: block; 
@@ -61,6 +59,15 @@
 }
 
 .mainli:hover {
+    background:$lightblue;
+    color: black;
+}
+
+.smallli {
+    padding-left:10px;
+}
+
+.mainli:hover, .smallli:hover {
     background:$lightblue;
     color: black;
 }
@@ -111,10 +118,5 @@ li:hover > ul > li {
 }
 
 .searchbutton:hover {
-    background: #bf5d1c;
-}
-
-.searchbutton:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px $orange;
+    background: $deeporange;
 }

@@ -22,9 +22,18 @@
 .smallorangebutton {
     @include smallorangebutton;
 }
+
+.smallorangebutton:hover {
+    background: $deeporange;
+}
+
 .smallgreenbutton {
     @include smallorangebutton;
     background-color: green;
+}
+
+.smallgreenbutton:hover {
+    background: darkgreen;
 }
 
 .edit {
@@ -32,3 +41,4 @@
     color: white;
     background-color: $darkblue;
 }
+

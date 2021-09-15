@@ -6,10 +6,6 @@ const Footer = () => {
             <div className={styles.menu}>
                 <li><a href="" className={styles.namesite}>Let's learn English!</a></li>
             </div>
-            <div className={styles.form}>
-                <input type="search" name="q" placeholder="What to search?" className={styles.search} />
-                <button className={styles.searchbutton}>Search</button>
-            </div>
         </ul>
     );
 }

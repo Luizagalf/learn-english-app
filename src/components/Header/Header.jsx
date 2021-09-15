@@ -9,14 +9,14 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <ul className={styles.menu}>
-                <li><Link to="/home" className={styles.namesite}>Let's learn English!</Link></li>
+                <li><Link to="/" className={styles.namesite}>Let's learn English!</Link></li>
                 <li><Link disabled to="#" className={styles.mainli}>Words</Link>
                     <ul className={styles.smallul}>
-                        <li><Link to="/game" className={styles.mainli}>Repeat words</Link></li>
-                        <li><Link to="/wordlist" className={styles.mainli}>Word list</Link></li>
-                        {/* <li><Link to="" className={styles.mainli}>Learn new words</Link></li>
-                        <li><Link to="" className={styles.mainli}>Select a topic</Link></li> */}
-                        <li><Link to="/allwords" className={styles.mainli}>See all words</Link></li>
+                        <li><Link to="/game" className={styles.smallli}>Repeat words</Link></li>
+                        <li><Link to="/wordlist" className={styles.smallli}>Word list</Link></li>
+                        {/* <li><Link to="" className={styles.smallli}>Learn new words</Link></li>
+                        <li><Link to="" className={styles.smallli}>Select a topic</Link></li> */}
+                        <li><Link to="/allwords" className={styles.smallli}>See all words</Link></li>
                     </ul>
                 </li>
                 <li><a href="" className={styles.mainli}>My progress</a></li>
