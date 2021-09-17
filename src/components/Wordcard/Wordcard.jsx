@@ -2,23 +2,20 @@ import React, {
     useState,
     useEffect,
     useRef,
-    forwardRef,
 } from 'react';
-import ReactDOM from "react-dom";
 import styles from "./card.module.scss";
 
 const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWords }) => {
+
+    const ref = useRef();
+    useEffect(() => ref.current.focus(), []);
+
     const [isPressed, togglePressed] = useState(false)
 
     const onClick = () => {
         togglePressed(true);
         addToLearnedWords();
     }
-
-    // const Button = forwardRef((focus, ref) => (
-    //     <button className={styles.checkbutton} onClick={onClick} ref={ref}
-    //     >Check!</button>
-    // ));
 
     return (
         <div className={styles.card}>
@@ -31,9 +28,8 @@ const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWord
                     {
                         isPressed
                             ? (<p className={styles.maintext}>{russian}</p>)
-                            : (<button className={styles.checkbutton} onClick={onClick}>Check!</button>)
-
-                        // : (<Button />)
+                            : (<button className={styles.checkbutton} onClick={onClick} ref={ref}
+                            >Check!</button>)
                     }
                 </div>
             </div>

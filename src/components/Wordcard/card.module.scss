@@ -44,14 +44,19 @@ h6 {
 
 .checkbutton {
     @include orangebutton;
+}
+
+.checkbutton:focus {
     box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
     transform: scale(1);
     animation: radial-pulse 3s infinite;
+    outline: 0;
 }
 
 .checkbutton:hover {
     background: $deeporange;
 }
+
 @keyframes radial-pulse {
     0% {
         transform: scale(0.95);
