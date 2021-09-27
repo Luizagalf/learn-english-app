@@ -3,8 +3,6 @@ import {
     Link
 } from "react-router-dom";
 
-// const isValid from ('./validation.js');
-
 const Header = () => {
     return (
         <div className={styles.header}>

@@ -5,14 +5,14 @@ import React, {
 } from 'react';
 import styles from "./card.module.scss";
 
-const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWords }) => {
+const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWords, change }) => {
 
     const ref = useRef();
     useEffect(() => ref.current.focus(), []);
 
-    const [isPressed, togglePressed] = useState(false)
+    const [isPressed, togglePressed] = useState(change)
 
-    const onClick = () => {
+    const lookWord = () => {
         togglePressed(true);
         addToLearnedWords();
     }
@@ -28,7 +28,7 @@ const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWord
                     {
                         isPressed
                             ? (<p className={styles.maintext}>{russian}</p>)
-                            : (<button className={styles.checkbutton} onClick={onClick} ref={ref}
+                            : (<button className={styles.checkbutton} onClick={lookWord} ref={ref}
                             >Check!</button>)
                     }
                 </div>
