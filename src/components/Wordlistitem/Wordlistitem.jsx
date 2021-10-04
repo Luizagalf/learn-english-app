@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./wordlistitem.module.scss";
 
-const Wordlistitem = ({ id, english, russian }) => {
-    const [isSelected, toggleSelected] = useState(false)
+const Wordlistitem = ({ id, english, russian, selected = false }) => {
+    const [isSelected, toggleSelected] = useState(selected)
 
     const [valueWord, setValueWord] = useState(english)
     const [valueTranslation, setValueTranslation] = useState(russian)
