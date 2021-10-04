@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./wordlistitem.module.scss";
 
 const Wordlistitem = ({ id, english, russian }) => {
@@ -94,28 +94,26 @@ const Wordlistitem = ({ id, english, russian }) => {
     let item;
     {
         isSelected
-            ? (item = <>
-                <tr className={styles.edit}>
-                    <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Word}`}
-                        name="Word"
-                        onChange={handleInputChange}
-                        value={valueWord}
-                        placeholder={formError.Word} />
-                        <p>{formCorrect.Word}</p>
-                    </td>
-                    <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Translation}`}
-                        name="Translation"
-                        onChange={handleInputChange}
-                        value={valueTranslation}
-                        placeholder={formError.Translation} />
-                        <p>{formCorrect.Translation}</p>
-                    </td>
-                    <div className={styles.buttons}>
-                        <button className={styles.smallgreenbutton} onClick={() => acceptChange()} disabled={!formValid} > Save</button>{' '}
-                        <button className={styles.smallorangebutton} id={`edit.{id}`} onClick={() => cancelChange()}>Cancel</button>{' '}
-                    </div>
-                </tr >
-            </>)
+            ? (item = <tr className={styles.edit}>
+                <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Word}`}
+                    name="Word"
+                    onChange={handleInputChange}
+                    value={valueWord}
+                    placeholder={formError.Word} />
+                    <p>{formCorrect.Word}</p>
+                </td>
+                <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Translation}`}
+                    name="Translation"
+                    onChange={handleInputChange}
+                    value={valueTranslation}
+                    placeholder={formError.Translation} />
+                    <p>{formCorrect.Translation}</p>
+                </td>
+                <div className={styles.buttons}>
+                    <button className={styles.smallgreenbutton} onClick={() => acceptChange()} disabled={!formValid} > Save</button>{' '}
+                    <button className={styles.smallorangebutton} id={`edit.{id}`} onClick={() => cancelChange()}>Cancel</button>{' '}
+                </div>
+            </tr>)
             : (item = <tr>
                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{valueWord}</div></td>
                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{valueTranslation}</div></td>

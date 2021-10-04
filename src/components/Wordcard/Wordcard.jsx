@@ -8,7 +8,7 @@ import styles from "./card.module.scss";
 const Wordcard = ({ url, english, tags, transcription, russian, addToLearnedWords, change }) => {
 
     const ref = useRef();
-    useEffect(() => ref.current.focus(), []);
+    // useEffect(() => ref.current.focus(), []);
 
     const [isPressed, togglePressed] = useState(change)
 
