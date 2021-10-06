@@ -6,7 +6,8 @@ import React, {
 } from 'react';
 
 const Wordcards = () => {
-    useEffect(() => window.scrollTo(0, window.offsetTop), [])
+    const [words, setWords] = useState([])
+    useEffect(() => (window.scrollTo(0, window.offsetTop), setWords(jsonWords)), [])
     const change = true
 
     const nameList = [];
@@ -43,7 +44,7 @@ const Wordcards = () => {
                     { isSelected
                         && <div className={styles.row}>
                             {
-                                jsonWords.filter(word => word.tags === tag).map(filteredWord => (
+                                words.filter(word => word.tags === tag).map(filteredWord => (
                                     <div className={styles.col} key={filteredWord.id} >
                                         <Wordcard change={change} english={filteredWord.english} url={filteredWord.url} transcription={filteredWord.transcription} russian={filteredWord.russian} tags={filteredWord.tags}></Wordcard>
                                     </div>
@@ -54,7 +55,7 @@ const Wordcards = () => {
                 :
                 <div className={styles.row}>
                     {
-                        jsonWords.map((word) =>
+                        words.map((word) =>
                             <div className={styles.col} key={word.id} >
                                 <Wordcard change={change} english={word.english} url={word.url} transcription={word.transcription} russian={word.russian} tags={word.tags}></Wordcard>
                             </div>

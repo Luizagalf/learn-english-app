@@ -15,9 +15,9 @@ const Slider = () => {
         setLearnedWords(learnedWords + 1);
     }
 
-    const [state, setState] = useState(false)
+    const [words, setWords] = useState()
     useEffect(() => {
-        fetch("http://sandbox.itgirlschool.ru/api/words /")
+        fetch("http://itgirlschool.justmakeit.ru/api/words /")
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -25,16 +25,16 @@ const Slider = () => {
                     throw new Error('Something went wrong...');
                 }
             })
-            .then(json => setState(json))
-            .catch(error => setState(jsonWords))
+            .then(json => setWords(json))
+            .catch(error => setWords(jsonWords))
     })
 
     const handelClickState = (e) => {
         if (e <= 0) {
-            setCount(state.length - 1)
+            setCount(words.length - 1)
             return;
         }
-        if (e >= state.length) {
+        if (e >= words.length) {
             setCount(0)
             return;
         }
@@ -43,7 +43,7 @@ const Slider = () => {
 
     return (
         <>
-            {state
+            {words
                 &&
                 <div className={styles.slider} >
                     <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
@@ -52,8 +52,8 @@ const Slider = () => {
                     </div>
                     <div className={styles.card}>
                         <p className={styles.title}>You learned {learnedWords} words in this training!</p>
-                        <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={state[count].id} id={state[count].id} english={state[count].english} url={state[count].url} transcription={state[count].transcription} russian={state[count].russian} tags={state[count].tags}></Wordcard>
-                        <div>{count + 1}/{state.length}</div>
+                        <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={words[count].id} id={words[count].id} english={words[count].english} url={words[count].url} transcription={words[count].transcription} russian={words[count].russian} tags={words[count].tags}></Wordcard>
+                        <div>{count + 1}/{words.length}</div>
                     </div>
                     <div className={styles.arrowright} onClick={() => { handelClickState(count + 1) }}>
                         <div className={styles.arrowrighttop}></div>
