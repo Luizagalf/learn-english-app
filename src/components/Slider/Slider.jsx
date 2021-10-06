@@ -9,7 +9,7 @@ import React, {
 const Slider = () => {
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
-    const change = (false)
+    const change = false
 
     const addToLearnedWords = () => {
         setLearnedWords(learnedWords + 1);
