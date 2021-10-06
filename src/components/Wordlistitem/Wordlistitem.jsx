@@ -17,8 +17,8 @@ const Wordlistitem = ({ id, english, russian, selected = false }) => {
 
 
     const handleInputChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
+        const name = e.target.name.trim();
+        const value = e.target.value.trim();
         validateField(name, value);
     }
 

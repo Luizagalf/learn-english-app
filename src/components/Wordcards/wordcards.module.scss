@@ -5,6 +5,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 35px;
 }
 
 .col {
@@ -12,4 +13,26 @@
     display: flex;
     flex: 1 0;
     justify-content: center;
+}
+
+.rowtags {
+    @include subtitle-font;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: $lightblue;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+
+.tag {
+    color: $darkblue;
+    cursor: pointer;
+}
+
+.tag:hover {
+    color: $deeporange;
+    text-decoration: underline;
 }

@@ -9,34 +9,31 @@ const Wordcards = () => {
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
-    // const [nameList, setNameList] = useState([Allwords]);
+    const nameList = [];
     const [allWords, setAllWords] = useState(false)
     const [isSelected, toggleSelected] = useState(false)
     const [tag, setTag] = useState(false)
 
-    // const all;
-    // const ALL = () => {
-    //     if (jsonWords.word.includes(word.tags) === false) {
-    //         nameList.push(word.tags)
-    //     }
-    // }
+    for (let i = 0; i < jsonWords.length; i++) {
+        if (!nameList.includes(jsonWords[i].tags) && !jsonWords[i].tags === false) {
+            nameList.push(jsonWords[i].tags);
+        }
+    }
+    nameList.sort();
 
     const selectedTag = (e) => {
         setTag(e);
         setAllWords(true);
         toggleSelected(true);
-        console.log(tag, isSelected)
     }
 
     return (
         <>
-            <div className={styles.row}>
-                <div className={styles.col} onClick={() => { setAllWords(false) }}>Allwords</div>
+            <div className={styles.rowtags}>
+                <div className={styles.tag} onClick={() => { setAllWords(false) }}>Allwords</div>
                 {
-                    jsonWords.map((word) =>
-                        <div className={styles.col} key={word.id}>
-                            <div onClick={() => { selectedTag(word.tags) }} id={word.id}>{word.tags}</div>
-                        </div>
+                    nameList.map((tag) =>
+                        <p className={styles.tag} key={tag} onClick={() => { selectedTag(tag) }}>{tag}</p>
                     )
                 }
             </div>
