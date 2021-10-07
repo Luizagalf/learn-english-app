@@ -1,12 +1,16 @@
-import jsonWords from '../../jsonWords';
 import Wordcard from '../Wordcard/Wordcard';
+import Error from '../Error/Error';
+import { WordsContext } from '../../WordsContext';
 import styles from "./slider.module.scss";
 import React, {
     useState,
-    useEffect,
-} from 'react';
+    useContext
+} from 'react'
 
 const Slider = () => {
+    const appContext = useContext(WordsContext)
+    const { words, isLoading } = appContext
+
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
     const change = false
@@ -14,20 +18,6 @@ const Slider = () => {
     const addToLearnedWords = () => {
         setLearnedWords(learnedWords + 1);
     }
-
-    const [words, setWords] = useState()
-    useEffect(() => {
-        fetch("http://itgirlschool.justmakeit.ru/api/words /")
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong...');
-                }
-            })
-            .then(json => setWords(json))
-            .catch(error => setWords(jsonWords))
-    })
 
     const handelClickState = (e) => {
         if (e <= 0) {
@@ -43,8 +33,9 @@ const Slider = () => {
 
     return (
         <>
+            {isLoading && <p>Loading ...</p>}
             {words
-                &&
+                ?
                 <div className={styles.slider} >
                     <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
                         <div className={styles.arrowlefttop}></div>
@@ -60,9 +51,10 @@ const Slider = () => {
                         <div className={styles.arrowrightbottom}></div>
                     </div>
                 </div>
+                : <Error></Error>
             }
         </>
-    );
+    )
 }
 
 export default Slider;

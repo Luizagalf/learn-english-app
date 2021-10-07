@@ -2,8 +2,7 @@ import styles from "./styles/app.module.scss";
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import Header from './components/Header/Header';

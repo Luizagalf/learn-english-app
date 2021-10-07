@@ -1,13 +1,12 @@
-import jsonWords from '../../jsonWords';
+import { WordsContext } from '../../WordsContext';
+import React, { useContext, useEffect, useState } from "react";
 import Wordcard from '../Wordcard/Wordcard';
 import styles from "./wordcards.module.scss";
-import React, {
-    useEffect, useState
-} from 'react';
 
 const Wordcards = () => {
-    const [words, setWords] = useState([])
-    useEffect(() => (window.scrollTo(0, window.offsetTop), setWords(jsonWords)), [])
+    const appContext = useContext(WordsContext)
+    const { words, isLoading } = appContext
+    useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
     const nameList = [];
@@ -15,9 +14,9 @@ const Wordcards = () => {
     const [isSelected, toggleSelected] = useState(false)
     const [tag, setTag] = useState(false)
 
-    for (let i = 0; i < jsonWords.length; i++) {
-        if (!nameList.includes(jsonWords[i].tags) && !jsonWords[i].tags === false) {
-            nameList.push(jsonWords[i].tags);
+    for (let i = 0; i < words.length; i++) {
+        if (!nameList.includes(words[i].tags) && !words[i].tags === false) {
+            nameList.push(words[i].tags);
         }
     }
     nameList.sort();
@@ -38,7 +37,7 @@ const Wordcards = () => {
                     )
                 }
             </div>
-
+            {isLoading && <p>Loading ...</p>}
             { allWords
                 ? <>
                     { isSelected
