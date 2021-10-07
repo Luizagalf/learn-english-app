@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./styles/app.module.scss";
 import {
   BrowserRouter,

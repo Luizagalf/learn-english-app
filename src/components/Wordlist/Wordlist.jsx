@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import jsonWords from '../../jsonWords';
 import Wordlistitem from '../Wordlistitem/Wordlistitem';
+import Wordlistnewitem from '../Wordlistnewitem/Wordlistnewitem';
 
 const Wordlist = () => {
     const [words, setWords] = useState([])
@@ -25,6 +26,7 @@ const Wordlist = () => {
                         <Wordlistitem key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
                     )
                 }
+                <Wordlistnewitem />
             </table>
         </div>
     );

@@ -1,0 +1,67 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/screen.scss";
+
+.buttons {
+    max-width: 410px;
+    text-align: center;
+    display: flex;
+}
+
+.words {
+    @include text-font;
+    font-family: Georgia, serif;
+    padding-left: 5px;
+}
+
+.iteminput {
+    @include everyinput;
+    height: 30px;
+    width: 190px;
+}
+
+.errorinput {
+    border: 0.1em solid red;
+    background-color: #eda8a8;
+}
+
+.greeninput {
+    border: 0.1em solid green;
+    background-color: #89b777;
+}
+
+.notvalid {
+    color: red;
+    background-color: $lightblue;
+    @include text-font;
+    font-family: Georgia, serif;
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.smallorangebutton {
+    @include smallorangebutton;
+}
+
+.smallorangebutton:hover {
+    background: $deeporange;
+}
+
+.smallgreenbutton {
+    @include smallorangebutton;
+    background-color: green;
+}
+
+.smallgreenbutton:hover {
+    background: darkgreen;
+}
+
+.edit {
+    box-shadow: 0px 0px 10px 0px #000;
+    color: white;
+    background-color: $darkblue;
+}
+
