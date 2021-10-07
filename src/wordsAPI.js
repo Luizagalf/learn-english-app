@@ -4,9 +4,9 @@ import React, {
     useEffect,
 } from 'react';
 
-export const WordsContext = React.createContext();
+export const WordsContext = createContext();
 
-const API = (props) => {
+const WordsAPI = (props) => {
     const [words, setWords] = useState(" ")
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
@@ -21,7 +21,7 @@ const API = (props) => {
             })
             .then(response => setWords(response), setIsLoading(false))
             .catch(error => setWords(false))
-    })
+    }, [])
     return (
         <WordsContext.Provider value={{words, isLoading}}>
             {props.children}
@@ -29,4 +29,4 @@ const API = (props) => {
     );
 }
 
-export default API;
+export default WordsAPI;

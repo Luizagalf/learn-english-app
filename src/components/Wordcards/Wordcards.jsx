@@ -1,11 +1,11 @@
-import { WordsContext } from '../../WordsContext';
+import { WordsContext } from '../../wordsAPI';
 import React, { useContext, useEffect, useState } from "react";
 import Wordcard from '../Wordcard/Wordcard';
 import styles from "./wordcards.module.scss";
 
 const Wordcards = () => {
-    const appContext = useContext(WordsContext)
-    const { words, isLoading } = appContext
+    const cardsContext = useContext(WordsContext)
+    const { words, isLoading } = cardsContext
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
@@ -15,7 +15,7 @@ const Wordcards = () => {
     const [tag, setTag] = useState(false)
 
     for (let i = 0; i < words.length; i++) {
-        if (!nameList.includes(words[i].tags) && !words[i].tags === false) {
+        if (!nameList.includes(words[i].tags) && words[i].tags !== false && words[i].tags !== undefined && words[i].tags !== null) {
             nameList.push(words[i].tags);
         }
     }

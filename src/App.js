@@ -11,6 +11,7 @@ import Slider from './components/Slider/Slider';
 import Wordcards from './components/Wordcards/Wordcards';
 import Footer from './components/Footer/Footer';
 import Error from './components/Error/Error';
+import WordsAPI from './wordsAPI';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <div className={styles.app}>
       <Header/>
       <div className={styles.main}>
+      <WordsAPI>
                 <Switch>
                     <Route exact path="/game" component={() => <Slider/>} />
                     <Route exact path="/wordlist" component={() => <Wordlist/>} />
@@ -25,6 +27,7 @@ function App() {
                     <Route exact path="/" component={() => <Wordlist/>} />
                     <Route component={() => <Error/>}/>
                 </Switch>
+          </WordsAPI>
       </div>
       <Footer/>
       </div>

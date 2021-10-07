@@ -2,12 +2,13 @@ import styles from "./wordlist.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useContext } from "react";
 import Wordlistitem from '../Wordlistitem/Wordlistitem';
-import { WordsContext } from '../../WordsContext';
+import { WordsContext } from '../../wordsAPI';
 import Wordlistnewitem from '../Wordlistnewitem/Wordlistnewitem';
 
 const Wordlist = () => {
-    const appContext = useContext(WordsContext)
-    const { words, isLoading } = appContext
+    const wordlistContext = useContext(WordsContext)
+    const { words, isLoading } = wordlistContext
+    console.log(words)
     return (
         <>
             {isLoading && <p>Loading ...</p>}
@@ -23,12 +24,12 @@ const Wordlist = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    {
+                    {/* {
                         words.map((word) =>
                             <Wordlistitem key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
                         )
-                    }
-                    {/* <Wordlistnewitem /> */}
+                    } */}
+                    <Wordlistnewitem />
                 </table>
             </div>
         </>

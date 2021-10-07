@@ -2,16 +2,7 @@
   "name": "languages",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/search": {
-      "target": "https://www.google.com",
-      "changeOrigin": true
-    },
-    "/api": {
-      "target": "ttp://itgirlschool.justmakeit.ru",
-      "changeOrigin": true
-    }
-  },
+  "proxy": "http://itgirlschool.justmakeit.ru",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.14.1",

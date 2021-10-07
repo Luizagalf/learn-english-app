@@ -1,6 +1,6 @@
 import Wordcard from '../Wordcard/Wordcard';
 import Error from '../Error/Error';
-import { WordsContext } from '../../WordsContext';
+import { WordsContext } from '../../wordsAPI';
 import styles from "./slider.module.scss";
 import React, {
     useState,
@@ -8,8 +8,8 @@ import React, {
 } from 'react'
 
 const Slider = () => {
-    const appContext = useContext(WordsContext)
-    const { words, isLoading } = appContext
+    const sliderContext = useContext(WordsContext)
+    const { words, isLoading } = sliderContext
 
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
