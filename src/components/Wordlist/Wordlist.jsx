@@ -6,9 +6,7 @@ import { WordsContext } from '../../wordsAPI';
 import Wordlistnewitem from '../Wordlistnewitem/Wordlistnewitem';
 
 const Wordlist = () => {
-    const wordlistContext = useContext(WordsContext)
-    const { words, isLoading } = wordlistContext
-    console.log(words)
+    const { words, isLoading } = useContext(WordsContext)
     return (
         <>
             {isLoading && <p>Loading ...</p>}
@@ -24,11 +22,11 @@ const Wordlist = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    {/* {
+                    {
                         words.map((word) =>
                             <Wordlistitem key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
                         )
-                    } */}
+                    }
                     <Wordlistnewitem />
                 </table>
             </div>

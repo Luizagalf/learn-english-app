@@ -7,7 +7,7 @@ import React, {
 export const WordsContext = createContext();
 
 const WordsAPI = (props) => {
-    const [words, setWords] = useState(" ")
+    const [words, setWords] = useState([" "])
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         setIsLoading(true)

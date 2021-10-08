@@ -8,8 +8,7 @@ import React, {
 } from 'react'
 
 const Slider = () => {
-    const sliderContext = useContext(WordsContext)
-    const { words, isLoading } = sliderContext
+    const { words, isLoading } = useContext(WordsContext)
 
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)

@@ -4,8 +4,7 @@ import Wordcard from '../Wordcard/Wordcard';
 import styles from "./wordcards.module.scss";
 
 const Wordcards = () => {
-    const cardsContext = useContext(WordsContext)
-    const { words, isLoading } = cardsContext
+    const { words, isLoading } = useContext(WordsContext)
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
