@@ -1,10 +1,11 @@
 import { WordsContext } from '../../wordsAPI';
 import React, { useContext, useEffect, useState } from "react";
 import Wordcard from '../Wordcard/Wordcard';
+import LoadedComponent from '../LoadedComponent/LoadedComponent';
 import styles from "./wordcards.module.scss";
 
 const Wordcards = () => {
-    const { words, isLoading } = useContext(WordsContext)
+    const { words, isLoading, error } = useContext(WordsContext)
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
@@ -27,7 +28,7 @@ const Wordcards = () => {
     }
 
     return (
-        <>
+        <LoadedComponent isLoading={isLoading} error={error}>
             <div className={styles.rowtags}>
                 <div className={styles.tag} onClick={() => { setAllWords(false) }}>Allwords</div>
                 {
@@ -36,7 +37,6 @@ const Wordcards = () => {
                     )
                 }
             </div>
-            {isLoading && <p>Loading ...</p>}
             { allWords
                 ? <>
                     { isSelected
@@ -61,7 +61,7 @@ const Wordcards = () => {
                     }
                 </div>
             }
-        </>
+        </LoadedComponent>
     );
 }
 

@@ -1,15 +1,15 @@
 import styles from "./wordlist.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Wordlistitem from '../Wordlistitem/Wordlistitem';
 import { WordsContext } from '../../wordsAPI';
 import Wordlistnewitem from '../Wordlistnewitem/Wordlistnewitem';
+import LoadedComponent from '../LoadedComponent/LoadedComponent';
 
 const Wordlist = () => {
-    const { words, isLoading } = useContext(WordsContext)
+    const { words, isLoading, error } = useContext(WordsContext)
     return (
-        <>
-            {isLoading && <p>Loading ...</p>}
+        <LoadedComponent isLoading={isLoading} error={error}>
             <div className={styles.list}>
                 <table className={styles.table}>
                     <thead>
@@ -30,7 +30,7 @@ const Wordlist = () => {
                     <Wordlistnewitem />
                 </table>
             </div>
-        </>
+        </LoadedComponent>
     );
 }
 

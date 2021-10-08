@@ -1,14 +1,15 @@
 import Wordcard from '../Wordcard/Wordcard';
-import Error from '../Error/Error';
 import { WordsContext } from '../../wordsAPI';
+import LoadedComponent from '../LoadedComponent/LoadedComponent';
 import styles from "./slider.module.scss";
 import React, {
     useState,
     useContext
 } from 'react'
 
+
 const Slider = () => {
-    const { words, isLoading } = useContext(WordsContext)
+    const { words, isLoading, error } = useContext(WordsContext)
 
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
@@ -29,30 +30,24 @@ const Slider = () => {
         }
         setCount(e)
     }
-
     return (
-        <>
-            {isLoading && <p>Loading ...</p>}
-            {words
-                ?
-                <div className={styles.slider} >
-                    <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
-                        <div className={styles.arrowlefttop}></div>
-                        <div className={styles.arrowleftbottom}></div>
-                    </div>
-                    <div className={styles.card}>
-                        <p className={styles.title}>You learned {learnedWords} words in this training!</p>
-                        <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={words[count].id} id={words[count].id} english={words[count].english} url={words[count].url} transcription={words[count].transcription} russian={words[count].russian} tags={words[count].tags}></Wordcard>
-                        <div>{count + 1}/{words.length}</div>
-                    </div>
-                    <div className={styles.arrowright} onClick={() => { handelClickState(count + 1) }}>
-                        <div className={styles.arrowrighttop}></div>
-                        <div className={styles.arrowrightbottom}></div>
-                    </div>
+        <LoadedComponent isLoading={isLoading} error={error}>
+            <div className={styles.slider} >
+                <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
+                    <div className={styles.arrowlefttop}></div>
+                    <div className={styles.arrowleftbottom}></div>
                 </div>
-                : <Error></Error>
-            }
-        </>
+                <div className={styles.card}>
+                    <p className={styles.title}>You learned {learnedWords} words in this training!</p>
+                    <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={words[count].id} id={words[count].id} english={words[count].english} url={words[count].url} transcription={words[count].transcription} russian={words[count].russian} tags={words[count].tags}></Wordcard>
+                    <div>{count + 1}/{words.length}</div>
+                </div>
+                <div className={styles.arrowright} onClick={() => { handelClickState(count + 1) }}>
+                    <div className={styles.arrowrighttop}></div>
+                    <div className={styles.arrowrightbottom}></div>
+                </div>
+            </div>
+        </LoadedComponent>
     )
 }
 

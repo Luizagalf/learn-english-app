@@ -13,7 +13,10 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
     const [formError, setFormError] = useState({ Word: '', Translation: '' })
     const [formCorrect, setFormCorrect] = useState({ Word: '', Translation: '' })
     const [formValid, setlformValid] = useState(false);
-    const [colorInput, setcColorInput] = useState({ Word: '', Translation: '' })
+    const [colorInput, setColorInput] = useState({ Word: '', Translation: '' })
+
+    const [newWords, setNewWords] = useState()
+
 
 
     const handleInputChange = (e) => {
@@ -30,34 +33,34 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
                     if (value.match("^[a-zA-Z\s]+$")) {
                         setFormCorrect({ Word: '', Translation: formCorrect.Translation })
                         setFormError({ Word: '', Translation: formError.Translation })
-                        setcColorInput({ Word: styles.greeninput, Translation: colorInput.Translation })
+                        setColorInput({ Word: styles.greeninput, Translation: colorInput.Translation })
                     } else {
                         setFormError({ Word: '', Translation: formError.Translation })
                         setFormCorrect({ Word: 'Word is not correct', Translation: formCorrect.Translation })
-                        setcColorInput({ Word: styles.errorinput, Translation: colorInput.Translation })
+                        setColorInput({ Word: styles.errorinput, Translation: colorInput.Translation })
                     }
                 } else {
                     setFormCorrect({ Word: '', Translation: formCorrect.Translation })
                     setFormError({ Word: 'Field is empty', Translation: formError.Translation })
-                    setcColorInput({ Word: styles.errorinput, Translation: colorInput.Translation })
+                    setColorInput({ Word: styles.errorinput, Translation: colorInput.Translation })
                 }
-                setValueWord(value);
+                setNewWords(value);
                 break;
             case 'Translation':
                 if (value.length > 0) {
                     if (value.match("^[а-яА-ЯёЁ]+$")) {
                         setFormCorrect({ Word: formCorrect.Word, Translation: '' })
                         setFormError({ Word: formError.Word, Translation: '' })
-                        setcColorInput({ Word: colorInput.Word, Translation: styles.greeninput })
+                        setColorInput({ Word: colorInput.Word, Translation: styles.greeninput })
                     } else {
                         setFormError({ Word: formError.Word, Translation: '' })
                         setFormCorrect({ Word: formCorrect.Word, Translation: 'Word is not correct' })
-                        setcColorInput({ Word: colorInput.Word, Translation: styles.errorinput })
+                        setColorInput({ Word: colorInput.Word, Translation: styles.errorinput })
                     }
                 } else {
                     setFormCorrect({ Word: formCorrect.Word, Translation: '' })
                     setFormError({ Word: formError.Word, Translation: 'Field is empty' })
-                    setcColorInput({ Word: colorInput.Word, Translation: styles.errorinput })
+                    setColorInput({ Word: colorInput.Word, Translation: styles.errorinput })
                 }
                 setValueTranslation(value);
                 break;
@@ -79,14 +82,15 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
         setValueTranslation(prevValueTranslation);
         setFormError({ Word: '', Translation: '' });
         setFormCorrect({ Word: '', Translation: '' });
-        setcColorInput({ Word: '', Translation: '' });
+        setColorInput({ Word: '', Translation: '' });
     };
 
     const acceptChange = () => {
         if (formError.Word === '' && formError.Translation === '' && formCorrect.Word === '' && formCorrect.Translation === '') {
             setPrevWord(valueWord);
             setPrevValueTranslation(valueTranslation);
-            console.log(`English: ${valueWord}, Russian: ${valueTranslation}`);
+            setNewWords(`English: ${valueWord}, Russian: ${valueTranslation}`)
+            console.log(newWords)
             toggleSelected(false)
         }
     }
