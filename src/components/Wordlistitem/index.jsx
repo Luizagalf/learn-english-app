@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import styles from "./wordlistnewitem.module.scss";
+import styles from "./wordlistitem.module.scss";
 
-const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
+const Wordlistitem = ({ id, english, russian, selected = false }) => {
+    const [isLoadingBtn, setIsLoadingBtn] = useState(false)
+
     const [isSelected, toggleSelected] = useState(selected)
 
-    const [valueWord, setValueWord] = useState("")
-    const [valueTranslation, setValueTranslation] = useState("")
+    const [valueWord, setValueWord] = useState(english)
+    const [valueTranslation, setValueTranslation] = useState(russian)
 
     const [prevValueWord, setPrevWord] = useState(valueWord)
     const [prevValueTranslation, setPrevValueTranslation] = useState(valueTranslation)
@@ -72,7 +74,6 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
         }
     }
 
-
     const cancelChange = () => {
         toggleSelected(false);
         setValueWord(prevValueWord);
@@ -82,13 +83,18 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
         setcColorInput({ Word: '', Translation: '' });
     };
 
-    const acceptChange = () => {
+    const acceptChange = (id) => {
         if (formError.Word === '' && formError.Translation === '' && formCorrect.Word === '' && formCorrect.Translation === '') {
             setPrevWord(valueWord);
             setPrevValueTranslation(valueTranslation);
-            console.log(`English: ${valueWord}, Russian: ${valueTranslation}`);
             toggleSelected(false)
+            // editWord(id, valueWord, valueTranslation)
         }
+    }
+
+    const deleteChange = (id) => {
+        // deleteWord(id)
+        setIsLoadingBtn(true)
     }
 
     let item;
@@ -110,15 +116,16 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
                     <p>{formCorrect.Translation}</p>
                 </td>
                 <div className={styles.buttons}>
-                    <button className={styles.smallgreenbutton} onClick={() => acceptChange()} disabled={!formValid} > Save</button>{' '}
-                    <button className={styles.smallorangebutton} id={`edit.{id}`} onClick={() => cancelChange()}>Cancel</button>{' '}
+                    <button className={styles.smallgreenbutton} onClick={() => acceptChange(id)} disabled={!formValid}>Save</button>
+                    <button className={styles.smallorangebutton} id={`cancel.${id}`} onClick={cancelChange}>Cancel</button>
                 </div>
             </tr>)
             : (item = <tr>
                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{valueWord}</div></td>
                 <td className={styles.words}><div onClick={() => { toggleSelected(true) }}>{valueTranslation}</div></td>
                 <div className={styles.buttons}>
-                    <button className={styles.smallgreenbutton} id={`edit.${id}`} onClick={() => { toggleSelected(true) }}>Add new word</button>{' '}
+                    <button className={styles.smallorangebutton} id={`edit.${id}`} onClick={() => { toggleSelected(true) }}>Edit</button>
+                    <button className={styles.smallredbutton} id={`delete.${id}`} disabled={isLoadingBtn} onClick={() => deleteChange(id)}>Delete</button>
                 </div>
             </tr>)
     }
@@ -131,4 +138,4 @@ const Wordlistnewitem = ({ id, english, russian, selected = false }) => {
     );
 }
 
-export default Wordlistnewitem;
+export default Wordlistitem;

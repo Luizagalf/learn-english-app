@@ -6,12 +6,12 @@ import {
   Link
 } from "react-router-dom";
 
-import Header from './components/Header/Header';
-import Wordlist from './components/Wordlist/Wordlist';
-import Slider from './components/Slider/Slider';
-import Wordcards from './components/Wordcards/Wordcards';
-import Footer from './components/Footer/Footer';
-import Error from './components/Error/Error';
+import Header from './components/Header';
+import Wordlist from './components/Wordlist/index';
+import Slider from './components/Slider/index';
+import Wordcards from './components/Wordcards/index';
+import Footer from './components/Footer/index';
+import Error from './components/Error/index';
 
 function App() {
   return (

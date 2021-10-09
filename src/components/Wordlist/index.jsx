@@ -1,9 +1,10 @@
 import styles from "./wordlist.module.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 
 import jsonWords from '../../jsonWords';
-import Wordlistitem from '../Wordlistitem/Wordlistitem';
-import Wordlistnewitem from '../Wordlistnewitem/Wordlistnewitem';
+import Wordlistitem from '../Wordlistitem/index';
+import Wordlistnewitem from '../Wordlistnewitem/index';
 
 const Wordlist = () => {
     const [words, setWords] = useState([])

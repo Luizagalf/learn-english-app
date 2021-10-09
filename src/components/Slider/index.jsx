@@ -1,5 +1,5 @@
 import jsonWords from '../../jsonWords';
-import Wordcard from '../Wordcard/Wordcard';
+import Wordcard from '../Wordcard';
 import styles from "./slider.module.scss";
 import React, {
     useState,
@@ -16,18 +16,7 @@ const Slider = () => {
     }
 
     const [words, setWords] = useState()
-    useEffect(() => {
-        fetch("http://itgirlschool.justmakeit.ru/api/words /")
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong...');
-                }
-            })
-            .then(json => setWords(json))
-            .catch(error => setWords(jsonWords))
-    })
+    useEffect(() => setWords(jsonWords), [])
 
     const handelClickState = (e) => {
         if (e <= 0) {

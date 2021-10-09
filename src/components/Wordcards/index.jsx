@@ -1,5 +1,5 @@
 import jsonWords from '../../jsonWords';
-import Wordcard from '../Wordcard/Wordcard';
+import Wordcard from '../Wordcard/index';
 import styles from "./wordcards.module.scss";
 import React, {
     useEffect, useState
@@ -15,9 +15,9 @@ const Wordcards = () => {
     const [isSelected, toggleSelected] = useState(false)
     const [tag, setTag] = useState(false)
 
-    for (let i = 0; i < jsonWords.length; i++) {
-        if (!nameList.includes(jsonWords[i].tags) && !jsonWords[i].tags === false) {
-            nameList.push(jsonWords[i].tags);
+    for (let i = 0; i < words.length; i++) {
+        if (!nameList.includes(words[i].tags) && !words[i].tags === false) {
+            nameList.push(words[i].tags);
         }
     }
     nameList.sort();

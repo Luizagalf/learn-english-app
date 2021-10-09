@@ -59,9 +59,17 @@
     background: darkgreen;
 }
 
+.smallredbutton {
+    @include smallorangebutton;
+    background-color: red;
+}
+
+.smallredbutton:hover {
+    background: darkred;
+}
+
 .edit {
     box-shadow: 0px 0px 10px 0px #000;
     color: white;
     background-color: $darkblue;
 }
-
