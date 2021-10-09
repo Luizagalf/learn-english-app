@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./wordlistnewitem.module.scss";
 
-const Wordlistnewitem = ({ selected = false }) => {
+const Wordlistnewitem = ({ addWord, selected = false }) => {
     const [isSelected, toggleSelected] = useState(selected)
 
     const [valueWord, setValueWord] = useState('')
@@ -11,7 +11,6 @@ const Wordlistnewitem = ({ selected = false }) => {
     const [formCorrect, setFormCorrect] = useState({ Word: '', Translation: '' })
     const [formValid, setlformValid] = useState(false);
     const [colorInput, setcColorInput] = useState({ Word: '', Translation: '' })
-
 
     const handleInputChange = (e) => {
         const name = e.target.name.trim();
@@ -79,7 +78,10 @@ const Wordlistnewitem = ({ selected = false }) => {
     const acceptChange = () => {
         if (formError.Word === '' && formError.Translation === '' && formCorrect.Word === '' && formCorrect.Translation === '') {
             toggleSelected(false)
-            // addWord(valueWord, valueTranslation)
+            const min = 1
+            const max = 300
+            const id = String(Math.round(min + (Math.random() * (max - min))))
+            addWord(id, valueWord, valueTranslation)
         }
     }
 
@@ -90,14 +92,12 @@ const Wordlistnewitem = ({ selected = false }) => {
                 <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Word}`}
                     name="Word"
                     onChange={handleInputChange}
-                    value={valueWord}
                     placeholder={formError.Word} />
                     <p>{formCorrect.Word}</p>
                 </td>
                 <td className={styles.words}><input className={`${styles.iteminput} ${colorInput.Translation}`}
                     name="Translation"
                     onChange={handleInputChange}
-                    value={valueTranslation}
                     placeholder={formError.Translation} />
                     <p>{formCorrect.Translation}</p>
                 </td>

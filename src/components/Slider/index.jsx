@@ -6,7 +6,7 @@ import React, {
     useEffect,
 } from 'react';
 
-const Slider = () => {
+const Slider = ({ words }) => {
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
     const change = false
@@ -14,9 +14,6 @@ const Slider = () => {
     const addToLearnedWords = () => {
         setLearnedWords(learnedWords + 1);
     }
-
-    const [words, setWords] = useState()
-    useEffect(() => setWords(jsonWords), [])
 
     const handelClickState = (e) => {
         if (e <= 0) {

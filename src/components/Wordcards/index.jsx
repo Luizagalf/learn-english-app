@@ -5,9 +5,8 @@ import React, {
     useEffect, useState
 } from 'react';
 
-const Wordcards = () => {
-    const [words, setWords] = useState([])
-    useEffect(() => (window.scrollTo(0, window.offsetTop), setWords(jsonWords)), [])
+const Wordcards = ({ words }) => {
+    useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
     const nameList = [];

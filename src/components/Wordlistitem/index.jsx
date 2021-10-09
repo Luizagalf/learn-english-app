@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./wordlistitem.module.scss";
 
-const Wordlistitem = ({ id, english, russian, selected = false }) => {
+const Wordlistitem = ({ id, english, russian, removeWord, editWord, selected = false }) => {
     const [isLoadingBtn, setIsLoadingBtn] = useState(false)
 
     const [isSelected, toggleSelected] = useState(selected)
@@ -16,7 +16,6 @@ const Wordlistitem = ({ id, english, russian, selected = false }) => {
     const [formCorrect, setFormCorrect] = useState({ Word: '', Translation: '' })
     const [formValid, setlformValid] = useState(false);
     const [colorInput, setcColorInput] = useState({ Word: '', Translation: '' })
-
 
     const handleInputChange = (e) => {
         const name = e.target.name.trim();
@@ -88,12 +87,12 @@ const Wordlistitem = ({ id, english, russian, selected = false }) => {
             setPrevWord(valueWord);
             setPrevValueTranslation(valueTranslation);
             toggleSelected(false)
-            // editWord(id, valueWord, valueTranslation)
+            editWord(id, valueWord, valueTranslation)
         }
     }
 
     const deleteChange = (id) => {
-        // deleteWord(id)
+        removeWord(id)
         setIsLoadingBtn(true)
     }
 
