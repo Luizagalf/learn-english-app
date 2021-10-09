@@ -1,4 +1,4 @@
-import Error from '../Error/Error'
+import Error from '../Error/index'
 
 const LoadedComponent = ({ isLoading, error, children }) => {
     if (isLoading) {

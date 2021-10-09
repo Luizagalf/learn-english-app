@@ -1,6 +1,6 @@
-import Wordcard from '../Wordcard/Wordcard';
+import Wordcard from '../Wordcard/index';
 import { WordsContext } from '../../wordsAPI';
-import LoadedComponent from '../LoadedComponent/LoadedComponent';
+import LoadedComponent from '../LoadedComponent/index';
 import styles from "./slider.module.scss";
 import React, {
     useState,

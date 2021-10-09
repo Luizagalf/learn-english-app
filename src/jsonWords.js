@@ -1,11 +1,5 @@
 const jsonWords = [{
-    "id": "57",
-    "english": "bus",
-    "transcription": "[bʌs]",
-    "russian": "автобус",
-    "tags": "City",
-    "url": "https://www.mvg.de/.imaging/mte/mvg/galerie-view/dam/mvg/pressebilder/2020/MAN-Lion-s-City-E/MVG-MAN-E-Bus_cSWM-MVG--20-.JPG/jcr:content/MVG-MAN-E-Bus_cSWM-MVG%20(20).JPG",
-    "tags_json": "[]"
+    "id": "57", "english": "bus", "transcription": "[bʌs]", "russian": "автобус", "tags": "City", "url": "https://www.mvg.de/.imaging/mte/mvg/galerie-view/dam/mvg/pressebilder/2020/MAN-Lion-s-City-E/MVG-MAN-E-Bus_cSWM-MVG--20-.JPG/jcr:content/MVG-MAN-E-Bus_cSWM-MVG%20(20).JPG", "tags_json": "[]"
     },{
     "id": "58",
     "english": "airport",

@@ -1,7 +1,7 @@
 import { WordsContext } from '../../wordsAPI';
 import React, { useContext, useEffect, useState } from "react";
-import Wordcard from '../Wordcard/Wordcard';
-import LoadedComponent from '../LoadedComponent/LoadedComponent';
+import Wordcard from '../Wordcard/index';
+import LoadedComponent from '../LoadedComponent/index';
 import styles from "./wordcards.module.scss";
 
 const Wordcards = () => {
