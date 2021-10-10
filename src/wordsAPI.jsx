@@ -23,8 +23,10 @@ const WordsAPI = (props) => {
             .then(response => setWords(response), setIsLoading(false))
             .catch(error => setError(true), setIsLoading(false))
     }
+    useEffect(() => fetchData(), [])
 
     const addWord = (valueWord, valueTranslation) => {
+        setIsLoading(true)
         fetch(`/api/words/add`, {
             method: 'POST',
             headers: {
@@ -42,6 +44,7 @@ const WordsAPI = (props) => {
     }
 
     const deleteWord = (id) => {
+        setIsLoading(true)
         fetch(`/api/words/${id}/delete`, {
             method: 'POST',
             headers: {
@@ -63,19 +66,17 @@ const WordsAPI = (props) => {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ english: valueWord, russian: valueTranslation })
+            body: JSON.stringify({ id: id, english: valueWord, russian: valueTranslation, tags: [], transcription: "ывс", tags_json: [] })
         })
             .then(response => {
                 if (response.ok) {
                     fetchData()
+                    window.location.reload()
                 } else {
-                    console.log(response)
                     throw new Error('Something went wrong...');
                 }
             })
     }
-
-    useEffect(() => fetchData(), [])
     return (
         <WordsContext.Provider value={{ words, isLoading, error, addWord, deleteWord, editWord }}>
             {props.children}

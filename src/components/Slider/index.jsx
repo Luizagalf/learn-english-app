@@ -32,14 +32,15 @@ const Slider = () => {
     }
     return (
         <LoadedComponent isLoading={isLoading} error={error}>
-            <div className={styles.slider} >
+            < div className={styles.slider} >
                 <div className={styles.arrowleft} onClick={() => { handelClickState(count - 1) }}>
                     <div className={styles.arrowlefttop}></div>
                     <div className={styles.arrowleftbottom}></div>
                 </div>
                 <div className={styles.card}>
                     <p className={styles.title}>You learned {learnedWords} words in this training!</p>
-                    <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={words[count].id} id={words[count].id} english={words[count].english} url={words[count].url} transcription={words[count].transcription} russian={words[count].russian} tags={words[count].tags}></Wordcard>
+                    {words.length ? <Wordcard change={change} addToLearnedWords={addToLearnedWords} key={words[count].id} id={words[count].id} english={words[count].english} url={words[count].url} transcription={words[count].transcription} russian={words[count].russian} tags={words[count].tags}></Wordcard>
+                        : ""}
                     <div>{count + 1}/{words.length}</div>
                 </div>
                 <div className={styles.arrowright} onClick={() => { handelClickState(count + 1) }}>
@@ -47,7 +48,7 @@ const Slider = () => {
                     <div className={styles.arrowrightbottom}></div>
                 </div>
             </div>
-        </LoadedComponent>
+        </LoadedComponent >
     )
 }
 

@@ -87,10 +87,12 @@ const Wordlistitem = ({ id, english, russian, selected = false }) => {
 
     const acceptChange = (id) => {
         if (formError.Word === '' && formError.Translation === '' && formCorrect.Word === '' && formCorrect.Translation === '') {
-            setPrevWord(valueWord);
-            setPrevValueTranslation(valueTranslation);
-            toggleSelected(false)
             editWord(id, valueWord, valueTranslation)
+            setValueWord(valueWord)
+            setValueTranslation(valueTranslation)
+            setPrevWord(valueWord)
+            setPrevValueTranslation(valueTranslation)
+            toggleSelected(false)
         }
     }
 

@@ -15,7 +15,7 @@ const Wordcards = () => {
     const [tag, setTag] = useState(false)
 
     for (let i = 0; i < words.length; i++) {
-        if (!nameList.includes(words[i].tags) && words[i].tags !== false && words[i].tags !== undefined && words[i].tags !== null) {
+        if (!nameList.includes(words[i].tags) && words[i].tags !== false && words[i].tags !== undefined && words[i].tags !== null && words[i].tags !== "Array") {
             nameList.push(words[i].tags);
         }
     }
