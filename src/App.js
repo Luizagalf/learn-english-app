@@ -16,7 +16,7 @@ import Error from './components/Error/index';
 import jsonWords from "./jsonWords";
 
 function App() {
-  const [words, setWords] = useState([" "])
+  const [words, setWords] = useState([])
     useEffect(() => {
       const savedWords = JSON.parse(localStorage.getItem('words'));
       if (savedWords) {
@@ -57,7 +57,7 @@ function App() {
                     <Route exact path="/game" component={() => <Slider words={words}/>} />
                     <Route exact path="/wordlist" component={() => <Wordlist words={words} removeWord={removeWord} editWord={editWord} addWord={addWord} />} />
                     <Route exact path="/allwords" component={() => <Wordcards words={words}/>} />
-                    <Route exact path="/" component={() => <Wordlist/>} />
+                    <Route exact path="/" component={() => <Wordlist words={words}/>} />
                     <Route component={() => <Error/>}/>
                 </Switch>
       </div>

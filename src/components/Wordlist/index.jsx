@@ -1,12 +1,10 @@
 import styles from "./wordlist.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect } from "react";
 
-import jsonWords from '../../jsonWords';
 import Wordlistitem from '../Wordlistitem/index';
 import Wordlistnewitem from '../Wordlistnewitem/index';
 
-const Wordlist = ({ removeWord, addWord, editWord, words }) => {
+const Wordlist = ({ words, removeWord, addWord, editWord }) => {
     return (
         <div className={styles.list}>
             <table className={styles.table}>
