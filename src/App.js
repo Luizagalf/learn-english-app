@@ -17,8 +17,11 @@ import jsonWords from "./jsonWords";
 
 function App() {
   const [words, setWords] = useState([])
-    useEffect(() => {
-      const savedWords = JSON.parse(localStorage.getItem('words'));
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const getWords = () => {localStorage.setItem('words', JSON.stringify(words))}
+  const savedWords = JSON.parse(localStorage.getItem('words'))
+      useEffect(() => {
       if (savedWords) {
           setWords(savedWords)
       } else {
@@ -27,7 +30,7 @@ function App() {
   }, [])
 
     useEffect(() => {
-        localStorage.setItem('words', JSON.stringify(words));
+      getWords()
     }, [words]);
 
     const removeWord = (id) => {
@@ -41,7 +44,7 @@ function App() {
                 words[i].russian = valueTranslation
             }
         }
-        localStorage.setItem('words', JSON.stringify(words))
+        getWords()
     }
 
     const addWord = (id, valueWord, valueTranslation) => {
@@ -54,10 +57,10 @@ function App() {
       <Header/>
       <div className={styles.main}>
                 <Switch>
-                    <Route exact path="/game" component={() => <Slider words={words}/>} />
-                    <Route exact path="/wordlist" component={() => <Wordlist words={words} removeWord={removeWord} editWord={editWord} addWord={addWord} />} />
-                    <Route exact path="/allwords" component={() => <Wordcards words={words}/>} />
-                    <Route exact path="/" component={() => <Wordlist words={words}/>} />
+                    <Route exact path="/game" component={() => <Slider words={words} isLoading={isLoading} error={error}/>} />
+                    <Route exact path="/wordlist" component={() => <Wordlist words={words} removeWord={removeWord} editWord={editWord} addWord={addWord} isLoading={isLoading} error={error}/>} />
+                    <Route exact path="/allwords" component={() => <Wordcards words={words} isLoading={isLoading} error={error}/>} />
+                    <Route exact path="/" component={() => <Wordlist words={words} removeWord={removeWord} editWord={editWord} addWord={addWord} isLoading={isLoading} error={error}/>} />
                     <Route component={() => <Error/>}/>
                 </Switch>
       </div>

@@ -1,4 +1,4 @@
-import jsonWords from '../../jsonWords';
+import LoadedComponent from '../LoadedComponent/index';
 import Wordcard from '../Wordcard';
 import styles from "./slider.module.scss";
 import React, {
@@ -6,7 +6,7 @@ import React, {
     useEffect,
 } from 'react';
 
-const Slider = ({ words }) => {
+const Slider = ({ words, isLoading, error }) => {
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
@@ -29,7 +29,7 @@ const Slider = ({ words }) => {
     }
 
     return (
-        <>
+        <LoadedComponent isLoading={isLoading} error={error}>
             {words
                 &&
                 <div className={styles.slider} >
@@ -48,7 +48,7 @@ const Slider = ({ words }) => {
                     </div>
                 </div>
             }
-        </>
+        </LoadedComponent>
     );
 }
 

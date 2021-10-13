@@ -1,11 +1,11 @@
-import jsonWords from '../../jsonWords';
 import Wordcard from '../Wordcard/index';
+import LoadedComponent from '../LoadedComponent/index';
 import styles from "./wordcards.module.scss";
 import React, {
     useEffect, useState
 } from 'react';
 
-const Wordcards = ({ words }) => {
+const Wordcards = ({ words, isLoading, error }) => {
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
@@ -28,7 +28,7 @@ const Wordcards = ({ words }) => {
     }
 
     return (
-        <>
+        <LoadedComponent isLoading={isLoading} error={error}>
             <div className={styles.rowtags}>
                 <div className={styles.tag} onClick={() => { setAllWords(false) }}>Allwords</div>
                 {
@@ -62,7 +62,7 @@ const Wordcards = ({ words }) => {
                     }
                 </div>
             }
-        </>
+        </LoadedComponent>
     );
 }
 

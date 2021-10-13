@@ -23,6 +23,7 @@ const Wordlistitem = ({ id, english, russian, removeWord, editWord, selected = f
         validateField(name, value);
     }
 
+
     const validateField = (fieldName, value) => {
 
         switch (fieldName) {
