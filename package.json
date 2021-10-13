@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.1.0",
     "enzyme-adapter-react-17-updated": "^1.0.2",
+    "mobx": "^6.3.3",
+    "mobx-react": "^7.2.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
