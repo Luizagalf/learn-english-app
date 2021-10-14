@@ -2,10 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'mobx-react';
+import WordsStore from "./stores/WordsStore";
+
+const stores = {
+  wordStore: new WordsStore()
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider {...stores}>
+        <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

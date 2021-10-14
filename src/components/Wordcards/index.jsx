@@ -53,7 +53,7 @@ const Wordcards = ({ words, isLoading, error }) => {
                 </>
                 :
                 <div className={styles.row}>
-                    {
+                    {words &&
                         words.map((word) =>
                             <div className={styles.col} key={word.id} >
                                 <Wordcard change={change} english={word.english} url={word.url} transcription={word.transcription} russian={word.russian} tags={word.tags}></Wordcard>

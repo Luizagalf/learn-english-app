@@ -5,7 +5,7 @@ import Wordlistitem from '../Wordlistitem/index';
 import Wordlistnewitem from '../Wordlistnewitem/index';
 import LoadedComponent from '../LoadedComponent/index';
 
-const Wordlist = ({ words, removeWord, addWord, editWord, isLoading, error, props }) => {
+const Wordlist = ({ words, removeWord, addWord, editWord, isLoading, error }) => {
     return (
         <LoadedComponent isLoading={isLoading} error={error}>
             <div className={styles.list}>
@@ -20,7 +20,7 @@ const Wordlist = ({ words, removeWord, addWord, editWord, isLoading, error, prop
                             <th></th>
                         </tr>
                     </thead>
-                    {
+                    {words &&
                         words.map((word) =>
                             <Wordlistitem removeWord={removeWord} editWord={editWord} key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
                         )
