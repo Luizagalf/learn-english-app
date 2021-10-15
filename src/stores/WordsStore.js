@@ -1,4 +1,4 @@
-import {makeAutoObservable, toJS} from 'mobx';
+import {makeAutoObservable} from 'mobx';
 
 class WordsStore {
     words = []
@@ -52,8 +52,6 @@ class WordsStore {
             .then(response => {
                 if (response.ok) {
                     this.fetchData()
-                    window.location.reload()
-
                 } else {
                     throw new Error('Something went wrong...');
                 }

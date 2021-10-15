@@ -4,8 +4,13 @@ import styles from "./wordcards.module.scss";
 import React, {
     useEffect, useState
 } from 'react';
+import { observer, inject } from "mobx-react";
 
-const Wordcards = ({ words, isLoading, error }) => {
+const Wordcards = inject(['wordStore'])(observer(({ wordStore }) => {
+    const words = wordStore.words
+    const isLoading = wordStore.isLoading
+    const error = wordStore.error
+
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const change = true
 
@@ -64,6 +69,6 @@ const Wordcards = ({ words, isLoading, error }) => {
             }
         </LoadedComponent>
     );
-}
+}))
 
 export default Wordcards;

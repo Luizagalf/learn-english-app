@@ -5,8 +5,13 @@ import React, {
     useState,
     useEffect,
 } from 'react';
+import { observer, inject } from "mobx-react";
 
-const Slider = ({ words, isLoading, error }) => {
+const Slider = inject(['wordStore'])(observer(({ wordStore }) => {
+    const words = wordStore.words
+    const isLoading = wordStore.isLoading
+    const error = wordStore.error
+
     useEffect(() => window.scrollTo(0, window.offsetTop), [])
     const [count, setCount] = useState(0)
     const [learnedWords, setLearnedWords] = useState(0)
@@ -50,6 +55,6 @@ const Slider = ({ words, isLoading, error }) => {
             }
         </LoadedComponent>
     );
-}
+}))
 
 export default Slider;

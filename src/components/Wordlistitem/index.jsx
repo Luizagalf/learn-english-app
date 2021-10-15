@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./wordlistitem.module.scss";
 
 const Wordlistitem = ({ id, english, russian, removeWord, editWord, selected = false }) => {
@@ -22,7 +22,6 @@ const Wordlistitem = ({ id, english, russian, removeWord, editWord, selected = f
         const value = e.target.value.trim();
         validateField(name, value);
     }
-
 
     const validateField = (fieldName, value) => {
 
