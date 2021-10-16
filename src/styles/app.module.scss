@@ -19,6 +19,20 @@
     justify-content: center;
 }
 
-.main {
-    margin-top: 50px;
+@media screen and (min-width: #{$medium-tablet - 117px}) {
+    .main {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: #{$phone + 1px}) and (max-width: #{$medium-tablet - 118px}) {
+    .main {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: $phone) {
+    .main {
+        margin-top: 200px;
+    }
 }
