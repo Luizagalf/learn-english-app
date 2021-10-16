@@ -9,7 +9,7 @@ class WordsStore {
         makeAutoObservable(this)
     }
     
-    fetchData() {
+    fetchData = () => {
         this.isLoading = true
         return fetch("/api/words/")
             .then(response => {
@@ -23,14 +23,14 @@ class WordsStore {
             .catch(error => this.error = true, this.isLoading = false)
     }
 
-    addWord(valueWord, valueTranslation) {
+    addWord = (id, valueWord, valueTranslation) => {
         this.isLoading = true
         fetch(`/api/words/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ english: valueWord, russian: valueTranslation, tags: [] })
+            body: JSON.stringify({ id: id, english: valueWord, russian: valueTranslation})
         })
             .then(response => {
                 if (response.ok) {
@@ -41,7 +41,7 @@ class WordsStore {
             })
     }
 
-    deleteWord(id) {
+    deleteWord = (id) => {
         this.isLoading = true
         fetch(`/api/words/${id}/delete`, {
             method: 'POST',
@@ -52,6 +52,7 @@ class WordsStore {
             .then(response => {
                 if (response.ok) {
                     this.fetchData()
+                    window.location.reload()
                 } else {
                     throw new Error('Something went wrong...');
                 }
