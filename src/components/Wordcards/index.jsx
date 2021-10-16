@@ -20,7 +20,7 @@ const Wordcards = inject(['wordStore'])(observer(({ wordStore }) => {
     const [tag, setTag] = useState(false)
 
     for (let i = 0; i < words.length; i++) {
-        if (!nameList.includes(words[i].tags) && !words[i].tags === false) {
+        if (!nameList.includes(words[i].tags) && !words[i].tags === false && words[i].tags !== undefined && words[i].tags !== null && words[i].tags !== "Array" && words[i].tags !== "test") {
             nameList.push(words[i].tags);
         }
     }
