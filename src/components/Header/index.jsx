@@ -10,7 +10,7 @@ const Header = () => {
                 <li><Link to="/" className={styles.namesite}>Let's learn English!</Link></li>
                 <li><Link disabled to="#" className={styles.mainli}>Words</Link>
                     <ul className={styles.smallul}>
-                        <li><Link to="/wordlist" className={styles.smallli}>Word list</Link></li>
+                        <li><Link to="/wordlist" className={styles.smallli}>Words list</Link></li>
                         <li><Link to="/allwords" className={styles.smallli}>See all words</Link></li>
                     </ul>
                 </li>
