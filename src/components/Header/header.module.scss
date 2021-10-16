@@ -7,22 +7,24 @@
     color: $white;
     list-style: none;
     @include zero;
-    // height: 50px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     position: fixed;
+    align-items: center;
     top: 0;
     z-index: 4;
 }
 
 .menu {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     column-gap: 30px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .smallul {
@@ -36,10 +38,9 @@
 
 .namesite {
     text-decoration: none;
-    padding:0px 15px;
     font-family: $font;
     @include title-font;
-    line-height:50px;
+    padding:0px 10px;
     display: block; 
     color: white;
     -moz-transition: all 0.3s 0.01s ease;
@@ -50,7 +51,8 @@
 .mainli, .smallli {
     text-decoration: none;
     @include text-font;
-    line-height:50px;
+    padding: 0 10px;
+    line-height: 50px;
     display: block; 
     color: white;
     -moz-transition: all 0.3s 0.01s ease;
@@ -58,28 +60,15 @@
     -webkit-transition: all 0.3s 0.01s ease;
 }
 
-.mainli:hover {
-    background:$lightblue;
-    color: black;
-}
-
-.smallli {
-    padding-left:10px;
-}
 
 .mainli:hover, .smallli:hover {
     background:$lightblue;
     color: black;
+
 }
 
 .namesite:hover {
     color: white;
-}
-
-.form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 li {
@@ -104,9 +93,10 @@ li:hover > ul > li {
 
 .form {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
+    justify-content: center
 }
 
 .search {
@@ -115,8 +105,41 @@ li:hover > ul > li {
 
 .searchbutton {
     @include orangebutton;
+    margin: 0;
 }
 
 .searchbutton:hover {
     background: $deeporange;
+}
+
+@media screen and (min-width: #{$medium-tablet - 117px}) {
+    .form {
+        padding:0px 10px;
+    }
+}
+
+@media screen and (max-width: #{$medium-tablet - 118px}) {
+    .form {
+        padding:0px 10px 15px 10px;
+    }
+}
+
+@media screen and (min-width: #{$phone + 1px}) {
+    .header {
+        flex-direction: row;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: $phone) {
+    .header {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
 }
