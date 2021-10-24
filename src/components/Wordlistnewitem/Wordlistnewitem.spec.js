@@ -1,6 +1,6 @@
-import Wordlistitem from "./Wordlistitem.jsx";
+import Wordlistitem from "./Wordlistnewitem.jsx";
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-17-updated";
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -1,26 +1,23 @@
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/screen.scss";
+@import "../../styles/main.scss";
 
 .card {
     text-align: center;
-    width:300px;
+    width: 300px;
     background-color: $lightblue;
     border-color: $darkblue;
     @include subtitle-font;
-
     display: flex;
     flex-direction: column;
     row-gap: 30px;
     max-height: 650px;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
     height: 450px;
 }
 
 .img {
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
     width: 100%;
     vertical-align: middle;
 }
@@ -34,11 +31,11 @@
 
 h5 {
     font-weight: bold;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 h6 {
-    margin-top: -.25rem;
+    margin-top: -0.25rem;
     margin-bottom: 0;
 }
 
