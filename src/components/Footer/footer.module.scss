@@ -1,6 +1,4 @@
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/screen.scss";
+@import "../../styles/main.scss";
 
 .button {
     font-family: $font;
@@ -19,11 +17,11 @@
 
 .namesite {
     text-decoration: none;
-    padding:0px 15px;
+    padding: 0px 15px;
     font-family: $font;
     @include title-font;
-    line-height:50px;
-    display: block; 
+    line-height: 50px;
+    display: block;
     color: white;
     -moz-transition: all 0.3s 0.01s ease;
     -o-transition: all 0.3s 0.01s ease;
@@ -51,4 +49,3 @@
 .searchbutton {
     @include orangebutton;
 }
-
