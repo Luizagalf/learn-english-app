@@ -1,22 +1,37 @@
 import styles from "./wordlist.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { observer, inject } from "mobx-react";
 
-import Wordlistitem from '../Wordlistitem/index';
-import Wordlistnewitem from '../Wordlistnewitem/index';
-import LoadedComponent from '../LoadedComponent/index';
+import Wordlistitem from "../Wordlistitem/index";
+import Wordlistnewitem from "../Wordlistnewitem/index";
+import LoadedComponent from "../LoadedComponent/index";
+import { useEffect } from "react";
 
-const Wordlist = inject(['wordStore'])(observer(({ wordStore }) => {
-    const words = wordStore.words
-    const isLoading = wordStore.isLoading
-    const error = wordStore.error
+import {
+    setWordsAction,
+    addWordAction,
+    editWordAction,
+    deleteWordAction,
+} from "../../stores/actions";
+import { connect } from "react-redux";
+
+const Wordlist = (props) => {
+    useEffect(() => {
+        props.setWordsAction();
+    }, []);
+
+    const words = props.allWordsData;
+    const isLoading = props.isLoading;
+    const error = props.error;
+
     return (
         <LoadedComponent isLoading={isLoading} error={error}>
             <div className={styles.list}>
                 <table className={styles.table}>
                     <thead>
                         <tr>
-                            <td colspan="3" className={styles.title}>Word list</td>
+                            <td colspan="3" className={styles.title}>
+                                Words list
+                            </td>
                         </tr>
                         <tr>
                             <th>English</th>
@@ -25,15 +40,36 @@ const Wordlist = inject(['wordStore'])(observer(({ wordStore }) => {
                         </tr>
                     </thead>
                     {words &&
-                        words.map((word) =>
-                            <Wordlistitem removeWord={wordStore.deleteWord} editWord={wordStore.editWord} key={word.id} id={word.id} english={word.english} russian={word.russian}></Wordlistitem>
-                        )
-                    }
-                    <Wordlistnewitem addWord={wordStore.addWord} />
+                        words.map((word) => (
+                            <Wordlistitem
+                                removeWord={props.deleteWordAction}
+                                editWord={props.editWordAction}
+                                key={word.id}
+                                id={word.id}
+                                english={word.english}
+                                russian={word.russian}
+                            ></Wordlistitem>
+                        ))}
+                    <Wordlistnewitem addWord={props.addWordAction} />
                 </table>
             </div>
         </LoadedComponent>
     );
-}))
+};
 
-export default Wordlist;
+const mapStateToProps = (state) => {
+    return {
+        allWordsData: state.words,
+        isLoading: state.isLoading,
+        error: state.error,
+    };
+};
+
+const mapDispatchToprops = {
+    setWordsAction,
+    addWordAction,
+    editWordAction,
+    deleteWordAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToprops)(Wordlist);
