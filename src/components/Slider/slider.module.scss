@@ -1,6 +1,4 @@
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/screen.scss";
+@import "../../styles/main.scss";
 
 .slider {
     padding: 25px;
@@ -24,28 +22,30 @@
     @include title-font;
 }
 
-.arrowleft, .arrowright {
+.arrowleft,
+.arrowright {
     cursor: pointer;
     height: 120px;
     width: 80px;
     position: relative;
     margin: 20px;
 }
-.arrowlefttop, 
+.arrowlefttop,
 .arrowleftbottom,
 .arrowrighttop,
 .arrowrightbottom {
-    background: #337AB7;
+    background: #337ab7;
     height: 10px;
     position: absolute;
     top: 60px;
     width: 100px;
 }
-.arrowlefttop, .arrowrighttop {
+.arrowlefttop,
+.arrowrighttop {
     top: 64px;
 }
 
-.arrowlefttop{
+.arrowlefttop {
     transform: rotate(-45deg);
     transform-origin: bottom left;
 }
@@ -65,23 +65,25 @@
     transform-origin: top right;
 }
 
-.arrowlefttop::after, 
+.arrowlefttop::after,
 .arrowleftbottom::after,
 .arrowrighttop::after,
 .arrowrightbottom::after {
     background: #000;
-    content: '';
+    content: "";
     height: 100%;
     position: absolute;
     top: 0;
     transition: all 0.15s;
 }
-.arrowleftbottom::after, .arrowrighttop::after {
+.arrowleftbottom::after,
+.arrowrighttop::after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
 }
-.arrowlefttop::after, .arrowrightbottom::after{
+.arrowlefttop::after,
+.arrowrightbottom::after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
@@ -92,7 +94,7 @@
     transition-delay: 0.15s;
 }
 
-.arrowleft:hover .arrowleftbottom::after{
+.arrowleft:hover .arrowleftbottom::after {
     left: 0;
     transition-delay: 0s;
 }
@@ -102,10 +104,7 @@
     transition-delay: 0.15s;
 }
 
-.arrowright:hover .arrowrightbottom::after{
+.arrowright:hover .arrowrightbottom::after {
     right: 0;
     transition-delay: 0s;
 }
-
-
-

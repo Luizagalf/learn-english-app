@@ -1,6 +1,4 @@
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/screen.scss";
+@import "../../styles/main.scss";
 
 .header {
     background-color: $darkblue;
@@ -31,7 +29,7 @@
     list-style: none;
     margin: 0;
     padding-left: 0;
-    margin-top:25px;
+    margin-top: 25px;
     height: 50px;
     z-index: 5;
 }
@@ -40,31 +38,31 @@
     text-decoration: none;
     font-family: $font;
     @include title-font;
-    padding:0px 10px;
-    display: block; 
+    padding: 0px 10px;
+    display: block;
     color: white;
     -moz-transition: all 0.3s 0.01s ease;
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
 
-.mainli, .smallli {
+.mainli,
+.smallli {
     text-decoration: none;
     @include text-font;
     padding: 0 10px;
     line-height: 50px;
-    display: block; 
+    display: block;
     color: white;
     -moz-transition: all 0.3s 0.01s ease;
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
 
-
-.mainli:hover, .smallli:hover {
-    background:$lightblue;
+.mainli:hover,
+.smallli:hover {
+    background: $lightblue;
     color: black;
-
 }
 
 .namesite:hover {
@@ -72,9 +70,9 @@
 }
 
 li {
-    float:left;
-    position:relative;
-    background: $darkblue;   
+    float: left;
+    position: relative;
+    background: $darkblue;
 }
 
 li > ul {
@@ -84,11 +82,11 @@ li > ul {
 }
 
 li:hover > ul {
-    display:block; 
-    width:250px;
+    display: block;
+    width: 250px;
 }
 li:hover > ul > li {
-    float:none;
+    float: none;
 }
 
 .form {
@@ -96,7 +94,7 @@ li:hover > ul > li {
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .search {
@@ -114,13 +112,13 @@ li:hover > ul > li {
 
 @media screen and (min-width: #{$medium-tablet - 117px}) {
     .form {
-        padding:0px 10px;
+        padding: 0px 10px;
     }
 }
 
 @media screen and (max-width: #{$medium-tablet - 118px}) {
     .form {
-        padding:0px 10px 15px 10px;
+        padding: 0px 10px 15px 10px;
     }
 }
 
