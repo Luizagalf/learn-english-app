@@ -63,6 +63,8 @@
 .smallli:hover {
   background: $lightblue;
   color: black;
+  box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.07),
+    0px 5px 11px rgba(0, 140, 255, 0.4);
 }
 
 .namesite:hover {
