@@ -27,65 +27,67 @@ const Wordcards = ({ words, isLoading, error }) => {
 
   return (
     <LoadedComponent isLoading={isLoading} error={error}>
-      <div className={styles.rowtags}>
-        <div
-          className={styles.tag}
-          onClick={() => {
-            setAllWords(false);
-          }}
-        >
-          Allwords
-        </div>
-        {nameList.map((tag) => (
-          <p
+      <div className={styles.page_cards}>
+        <div className={styles.rowtags}>
+          <div
             className={styles.tag}
-            key={tag}
             onClick={() => {
-              selectedTag(tag);
+              setAllWords(false);
             }}
           >
-            {tag}
-          </p>
-        ))}
-      </div>
-
-      {allWords ? (
-        <>
-          {isSelected && (
-            <div className={styles.row}>
-              {words
-                .filter((word) => word.tags === tag)
-                .map((filteredWord) => (
-                  <div className={styles.col} key={filteredWord.id}>
-                    <Wordcard
-                      change={change}
-                      english={filteredWord.english}
-                      url={filteredWord.url}
-                      transcription={filteredWord.transcription}
-                      russian={filteredWord.russian}
-                      tags={filteredWord.tags}
-                    ></Wordcard>
-                  </div>
-                ))}
-            </div>
-          )}
-        </>
-      ) : (
-        <div className={styles.row}>
-          {words.map((word) => (
-            <div className={styles.col} key={word.id}>
-              <Wordcard
-                change={change}
-                english={word.english}
-                url={word.url}
-                transcription={word.transcription}
-                russian={word.russian}
-                tags={word.tags}
-              ></Wordcard>
-            </div>
+            Allwords
+          </div>
+          {nameList.map((tag) => (
+            <p
+              className={styles.tag}
+              key={tag}
+              onClick={() => {
+                selectedTag(tag);
+              }}
+            >
+              {tag}
+            </p>
           ))}
         </div>
-      )}
+
+        {allWords ? (
+          <>
+            {isSelected && (
+              <div className={styles.row}>
+                {words
+                  .filter((word) => word.tags === tag)
+                  .map((filteredWord) => (
+                    <div className={styles.col} key={filteredWord.id}>
+                      <Wordcard
+                        change={change}
+                        english={filteredWord.english}
+                        url={filteredWord.url}
+                        transcription={filteredWord.transcription}
+                        russian={filteredWord.russian}
+                        tags={filteredWord.tags}
+                      ></Wordcard>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <div className={styles.row}>
+            {words.map((word) => (
+              <div className={styles.col} key={word.id}>
+                <Wordcard
+                  change={change}
+                  english={word.english}
+                  url={word.url}
+                  transcription={word.transcription}
+                  russian={word.russian}
+                  tags={word.tags}
+                ></Wordcard>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </LoadedComponent>
   );
 };

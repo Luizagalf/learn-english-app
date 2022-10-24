@@ -1,46 +1,46 @@
-@import "../../styles/main.scss";
+@import "styles/main.scss";
 
 .main {
-    padding: 25px;
-    text-align: center;
+  padding: 25px;
+  text-align: center;
 }
 
 .title {
-    @include title-font;
-    font-size: 2em;
-    color: $darkblue;
-    font-weight: 600;
-    text-transform: uppercase;
+  @include title-font;
+  font-size: 2em;
+  color: $darkblue;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .notfound {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    position: relative;
-    z-index: 2;
-    margin-top: -10%;
-    margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: -10%;
+  margin-bottom: 5%;
 }
 
 .text {
-    @include title-font;
-    color: $darkblue;
+  @include title-font;
+  color: $darkblue;
 }
 
 .errortext {
-    position: relative;
-    z-index: 1;
-    font-family: maven pro, sans-serif;
-    color: #e0b598;
-    font-weight: 900;
-    font-size: 276px;
+  position: relative;
+  z-index: 1;
+  font-family: maven pro, sans-serif;
+  color: #e0b598;
+  font-weight: 900;
+  font-size: 276px;
 }
 
 .errorbutton {
-    @include orangebutton;
+  @include orangebutton;
 }
 
 .errorbutton:hover {
-    background: $deeporange;
+  background: $deeporange;
 }

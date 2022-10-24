@@ -2,7 +2,7 @@ import styles from "./wordlist.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Wordlistitem from "./Wordlistitem/index";
-import Wordlistnewitem from "../Wordlistnewitem/index";
+import Wordlistnewitem from "./Wordlistnewitem/index";
 import LoadedComponent from "../LoadedComponent/index";
 
 const Wordlist = ({

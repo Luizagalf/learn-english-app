@@ -1,36 +1,42 @@
-@import "../../styles/main.scss";
+@import "styles/main.scss";
+
+.page_cards {
+  height: 100%;
+  overflow: auto;
+}
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 35px;
 }
 
 .col {
-    padding: 25px;
-    display: flex;
-    flex: 1 0;
-    justify-content: center;
+  padding: 25px;
+  display: flex;
+  flex: 1 0;
+  justify-content: center;
 }
 
 .rowtags {
-    @include subtitle-font;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: $lightblue;
-    position: fixed;
-    z-index: 3;
-    width: 100%;
+  @include subtitle-font;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $lightblue;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  margin-top: -50px;
 }
 
 .tag {
-    color: $darkblue;
-    cursor: pointer;
+  color: $darkblue;
+  cursor: pointer;
 }
 
 .tag:hover {
-    color: $deeporange;
-    text-decoration: underline;
+  color: $deeporange;
+  text-decoration: underline;
 }

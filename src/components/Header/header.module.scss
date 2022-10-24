@@ -1,143 +1,143 @@
-@import "../../styles/main.scss";
+@import "styles/main.scss";
 
 .header {
-    background-color: $darkblue;
-    color: $white;
-    list-style: none;
-    @include zero;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    position: fixed;
-    align-items: center;
-    top: 0;
-    z-index: 4;
+  background-color: $darkblue;
+  color: $white;
+  list-style: none;
+  @include zero;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  z-index: 4;
 }
 
 .menu {
-    display: flex;
-    flex-wrap: nowrap;
-    column-gap: 30px;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 30px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .smallul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    margin-top: 25px;
-    height: 50px;
-    z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  margin-top: 25px;
+  height: 50px;
+  z-index: 5;
 }
 
 .namesite {
-    text-decoration: none;
-    font-family: $font;
-    @include title-font;
-    padding: 0px 10px;
-    display: block;
-    color: white;
-    -moz-transition: all 0.3s 0.01s ease;
-    -o-transition: all 0.3s 0.01s ease;
-    -webkit-transition: all 0.3s 0.01s ease;
+  text-decoration: none;
+  font-family: $font;
+  @include title-font;
+  padding: 0px 10px;
+  display: block;
+  color: white;
+  -moz-transition: all 0.3s 0.01s ease;
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
 }
 
 .mainli,
 .smallli {
-    text-decoration: none;
-    @include text-font;
-    padding: 0 10px;
-    line-height: 50px;
-    display: block;
-    color: white;
-    -moz-transition: all 0.3s 0.01s ease;
-    -o-transition: all 0.3s 0.01s ease;
-    -webkit-transition: all 0.3s 0.01s ease;
+  text-decoration: none;
+  @include text-font;
+  padding: 0 10px;
+  line-height: 50px;
+  display: block;
+  color: white;
+  -moz-transition: all 0.3s 0.01s ease;
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
 }
 
 .mainli:hover,
 .smallli:hover {
-    background: $lightblue;
-    color: black;
+  background: $lightblue;
+  color: black;
 }
 
 .namesite:hover {
-    color: white;
+  color: white;
 }
 
 li {
-    float: left;
-    position: relative;
-    background: $darkblue;
+  float: left;
+  position: relative;
+  background: $darkblue;
 }
 
 li > ul {
-    position: absolute;
-    top: 25px;
-    display: none;
+  position: absolute;
+  top: 25px;
+  display: none;
 }
 
 li:hover > ul {
-    display: block;
-    width: 250px;
+  display: block;
+  width: 250px;
 }
 li:hover > ul > li {
-    float: none;
+  float: none;
 }
 
 .form {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
 
 .search {
-    @include everyinput;
+  @include everyinput;
 }
 
 .searchbutton {
-    @include orangebutton;
-    margin: 0;
+  @include orangebutton;
+  margin: 0;
 }
 
 .searchbutton:hover {
-    background: $deeporange;
+  background: $deeporange;
 }
 
 @media screen and (min-width: #{$medium-tablet - 117px}) {
-    .form {
-        padding: 0px 10px;
-    }
+  .form {
+    padding: 0px 10px;
+  }
 }
 
 @media screen and (max-width: #{$medium-tablet - 118px}) {
-    .form {
-        padding: 0px 10px 15px 10px;
-    }
+  .form {
+    padding: 0px 10px 15px 10px;
+  }
 }
 
 @media screen and (min-width: #{$phone + 1px}) {
-    .header {
-        flex-direction: row;
-    }
+  .header {
+    flex-direction: row;
+  }
 
-    .menu {
-        flex-direction: row;
-    }
+  .menu {
+    flex-direction: row;
+  }
 }
 
 @media screen and (max-width: $phone) {
-    .header {
-        flex-direction: column;
-    }
+  .header {
+    flex-direction: column;
+  }
 
-    .menu {
-        flex-direction: column;
-    }
+  .menu {
+    flex-direction: column;
+  }
 }
