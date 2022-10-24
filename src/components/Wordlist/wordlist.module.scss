@@ -1,22 +1,33 @@
 @import "../../styles/main.scss";
 
 .list {
-    padding: 25px;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow-y: auto;
 }
 
 .table {
-    background-color: $lightblue;
-    min-width: 600px;
-    margin: 0 auto;
-    border: 1px solid $darkblue;
+  background-color: $lightblue;
+  width: 100%;
+  border: 1px solid $darkblue;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.06),
+    0px 2px 8px rgba(0, 140, 255, 0.1);
 }
 
 thead {
-    text-align: center;
-    @include subtitle-font;
+  text-align: center;
+  @include subtitle-font;
+
+  & > tr:nth-child(2) {
+    background-color: $lightblue;
+    position: sticky;
+    top: -2px;
+  }
 }
 
 .title {
-    text-align: center;
-    @include title-font;
+  text-align: center;
+  @include title-font;
 }

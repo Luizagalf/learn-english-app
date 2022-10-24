@@ -1,96 +1,96 @@
 $font: Georgia, serif;
 
 @mixin zero {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 @mixin georgia {
-    @include zero;
-    font-family: Georgia, serif;
-    font-style: normal;
-    text-decoration: none;
+  @include zero;
+  font-family: Georgia, serif;
+  font-style: normal;
+  text-decoration: none;
 }
 
 @mixin table {
-    @include zero;
-    -webkit-appearance: none;
-    appearance: none;
+  @include zero;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 @mixin orangebutton {
-    display: block;
-    @include input;
-    @include text-font;
-    height: 40px;
-    padding: 0em 0.75em;
-    background-color: $orange;
-    color: $white;
-    margin: 0 auto;
-    min-width: 100px;
+  display: block;
+  @include input;
+  @include text-font;
+  height: 40px;
+  padding: 0em 0.75em;
+  background-color: $orange;
+  color: $white;
+  margin: 0 auto;
+  min-width: 100px;
 }
 
 @mixin smallorangebutton {
-    display: block;
-    @include input;
-    @include text-font;
-    font-size: 0.8em;
-    padding: 0em 0.75em;
-    background-color: $orange;
-    color: $white;
-    margin: 0 auto;
+  display: block;
+  @include input;
+  @include text-font;
+  font-size: 0.8em;
+  padding: 0em 0.75em;
+  background-color: $orange;
+  color: $white;
+  margin: 0 auto;
 }
 
 @mixin everyinput {
-    display: block;
-    @include input;
-    max-width: 200px;
-    height: 40px;
+  display: block;
+  @include input;
+  max-width: 200px;
+  height: 40px;
 }
 
 @mixin input {
-    @include table;
-    padding: 0.375rem 0.75rem;
+  @include table;
+  padding: 0.375rem 0.75rem;
 }
 
 @mixin btn-input-size {
-    margin: 0;
-    height: 60px;
-    padding: 20px;
-    font-size: 1em;
-    font-weight: 300;
+  margin: 0;
+  height: 60px;
+  padding: 20px;
+  font-size: 1em;
+  font-weight: 300;
 }
 
 // fonts
 @mixin title-font {
-    @include georgia;
-    @include zero;
-    font-size: 1.3em;
-    font-weight: 540;
-    line-height: 45px;
+  @include georgia;
+  @include zero;
+  font-size: 1.3em;
+  font-weight: 540;
+  line-height: 45px;
 }
 
 @mixin subtitle-font {
-    @include georgia;
-    @include zero;
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 35px;
+  @include georgia;
+  @include zero;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 35px;
 }
 
 @mixin text-font {
-    @include georgia;
-    @include zero;
-    font-size: 1em;
-    font-weight: 300;
-    line-height: 35px;
+  @include georgia;
+  @include zero;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 35px;
 }
 
 td,
 tr {
-    @include subtitle-font;
-    border: 1px solid $blue;
+  @include subtitle-font;
+  border: 1px solid $blue;
 }
 
 html,
@@ -148,14 +148,33 @@ caption,
 tbody,
 tfoot,
 thead {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  list-style-type: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $lightblue;
+}
+
+::-webkit-resizer {
+  background-color: transparent;
 }

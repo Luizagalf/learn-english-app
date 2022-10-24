@@ -1,36 +1,41 @@
 @import "./main.scss";
 
 .app {
-    background-color: $blue;
+  background-color: $blue;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: $blue;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $blue;
 }
 
 .col {
-    padding: 25px;
-    display: flex;
-    flex: 1 0;
-    justify-content: center;
+  padding: 25px;
+  display: flex;
+  flex: 1 0;
+  justify-content: center;
 }
 
 @media screen and (min-width: #{$medium-tablet - 117px}) {
-    .main {
-        margin-top: 50px;
-    }
+  .main {
+    height: calc(100vh - 200px);
+    margin: 100px 0 50px;
+  }
 }
 
 @media screen and (min-width: #{$phone + 1px}) and (max-width: #{$medium-tablet - 118px}) {
-    .main {
-        margin-top: 100px;
-    }
+  .main {
+    height: calc(100vh - 300px);
+    margin: 150px 0 100px;
+  }
 }
 
 @media screen and (max-width: $phone) {
-    .main {
-        margin-top: 200px;
-    }
+  .main {
+    height: calc(100vh - 350px);
+    margin: 250px 0 50px;
+  }
 }
